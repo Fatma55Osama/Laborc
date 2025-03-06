@@ -1,0 +1,96 @@
+.div5{
+    min-height: 800px;
+    max-height:90% ;
+    background-color: #F1F5FD;
+    h1{
+      font-size: 44px;
+      font-weight: 600;
+    }
+    span{
+      font-size: 18px;
+    }
+    .icons{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid  #4a43dd;
+      span{
+        color: #4a43dd;
+      }
+    }
+    .textall{
+      h4{
+        font-size: 18px;
+        font-weight: 600;
+        color: #10002b;
+      }
+      p{
+        color: #6c757d;
+        font-size: 16px;
+      }
+      
+    }
+    button {
+        background-color: #4a43dd;
+        border: none;
+        font-weight: 600;
+        font-size: 16px;
+        color: white;
+      }
+   }
+   @media screen and (max-width: 767px) {
+    .all{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    .halfone{
+      order: 1;
+      width: 100%;
+      margin-top: 50px;
+      h1{
+        font-size: 30px;
+      }
+    }
+    .halftwo{
+      margin-top: 20px;
+       order: 2;
+       width: 100%;
+       display: flex !important;
+       flex-direction: column !important;
+       .two{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
+       }
+       .twoimg{
+        width: 280px;
+       }
+    }
+  }
+  @media screen and (max-width: 992px) and (min-width: 768px) {
+    .all{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 50px;
+
+    }
+    .halfone{
+      order: 1;
+      width: 100%;
+      margin-top: 50px;
+      h1{
+        font-size: 30px;
+      }
+    }
+    .halftwo{
+      margin-top: 20px;
+       order: 2;
+       width: 100%;
+       .twoimg{
+        width: 330px;
+       }
+    }
+  }  

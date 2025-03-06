@@ -1,0 +1,109 @@
+.all {
+  position: relative;
+  width: 100%;
+  min-height: 900px;
+  max-height: 90%;
+}
+.points {
+  /* background-image: url(../../assets//shape-15.png);
+  background-position: 50%;
+  background-size: cover; */
+  z-index: 5;
+  width: 1000px;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .filter {
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    opacity: 0.3;
+    border-radius: 10px;
+
+  }
+  .bgcontainerimg {
+    width: 86%; 
+    height: 70% !important;
+  }
+  .bgimg {
+    position: relative;
+    z-index: 11;
+    width: 833px;
+    height: 450px;
+    border-radius: 10px;
+  }
+  button {
+    z-index: 15;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+    span {
+      border-radius: 4px;
+      border-left: 20px solid #4a43dd;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+    }
+  }
+  .textlaborat {
+    position: absolute;
+    z-index: 2;
+    h4 {
+      color: white;
+      font-weight: 600;
+    }
+  }
+}
+.modal2 {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.806);
+  inset: 0;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  width: 100vw;
+  height: 100vh;
+}
+
+.contentModal2 iframe {
+  width: 800px;
+  height: 500px;
+  border-radius: 8px;
+}
+.texth4 {
+  margin-bottom: 30%;
+  h4 {
+    font-weight: 600;
+  }
+}
+.textandhexagon{
+ height: 125%;
+ width: 130%;
+}
+
+.allhexagon{
+  h5{
+    font-size: 21px;
+    font-weight: 600;
+  }
+  p{
+    color: #6a6a6a ;
+    font-size: 16px;
+  }
+}
+.hexagon {
+  width: 78px;
+  height: 90px;
+  background-color: #4a43dd;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  .hexagon > div {
+    color: white;
+    font-size:30px
+  }
+
+}

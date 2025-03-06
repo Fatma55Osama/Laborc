@@ -1,0 +1,67 @@
+// .custom-accordion .custom-item {
+//   border: none !important;
+// }
+
+// .custom-accordion .custom-header {
+//   background: none !important;
+//   box-shadow: none !important;
+//   border: none !important;
+//   padding: 10px 0;
+// }
+
+// .custom-accordion .custom-header::after {
+//   display: none !important; /* Hides the arrow */
+// }
+
+// .custom-accordion .accordion-body {
+//   background: none !important;
+//   border: none !important;
+// }
+
+.accordion-item {
+  border: none;
+  // box-shadow: 0px 10px 90px#4b43dd17; 
+  border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 15px; 
+}
+.accordion {
+  --bs-accordion-active-bg: white;
+  --bs-accordion-btn-active-icon: none;
+  --bs-accordion-border-width: none;
+  width: 70%;
+  background: #fff;
+  box-shadow: 0px 10px 50px #37aa671f; /* زيادة الشادو */ 
+   border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 3px;
+}
+
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 0;
+  height: 0;
+  margin-left: auto;
+  content: "";
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: var(--bs-accordion-btn-icon-width);
+  transition: var(--bs-accordion-btn-icon-transition);
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button {
+  background: white;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+  // box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15); /* شادو عند التحويل */
+}
+.accordion-button:hover {
+}

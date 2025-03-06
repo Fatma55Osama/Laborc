@@ -1,0 +1,135 @@
+.alldiv {
+  min-height: 100vh;
+  max-height: 90%;
+  .imgback {
+    position: relative;
+    min-height: 520px;
+    max-height: 90%;
+    background-image: url(../assets/page-title-5.jpg);
+    background-position: 50%;
+    background-size: cover;
+    .header {
+      position: absolute;
+      z-index: 50;
+    }
+    .shap {
+      position: relative;
+      left: 0;
+      top: 0px;
+    }
+    .textcenter {
+      z-index: 30;
+      position: absolute;
+      top: 50%;
+      left: 8%;
+      color: white;
+      h2 {
+        font-size: 50px;
+        font-weight: 600;
+      }
+      .span {
+        font-size: 18px;
+      }
+    }
+  }
+  .imgback::before {
+    content: "";
+    background: linear-gradient(102.73deg, #37aa67 0.76%, #08349e 99.64%);
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+  }
+  .divquestion {
+    min-height: 800px;
+    max-height: 90%;
+    .shapAnimate {
+      background-image: url(../assets/shape-17.png);
+      background-position: 50%;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .section1 {
+      button {
+        position: relative;
+        border: none;
+        color:#0a0571;
+        border-radius: 30px;
+      }
+      h3 {
+        font-size: 40px;
+        font-weight: 600;
+      }
+      button::before {
+        content: "";
+        background-color: #4a43dd;
+        opacity: 0.1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 30px;
+      }
+    }
+    .answer {
+      color: #6a6a6a;
+      font-size: 16px;
+    }
+  }
+  .send {
+    min-height: 500px;
+    max-height: 90%;
+    padding-top: 6%;
+    button {
+      position: relative;
+      border: none;
+      color: #0a0571;
+      border-radius: 30px;
+     
+    } button::before {
+        content: "";
+        background-color:#4a43dd;
+        opacity: 0.1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 30px;
+      }
+    h3 {
+      font-size: 40px;
+      font-weight: 600;
+    }
+    .fristwoinput {
+      input {
+        color: #6a6a6a;
+        border-radius: 55px;
+        height: 50px;
+        font-size: 14px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        outline: none;
+        transition: all 0.3 ease-in-out;
+      }
+    }
+    .textarea {
+      height: 170px;
+      resize: none;
+      width: 69%;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding-top: 15px;
+      padding: 10px;
+      outline: none;
+      transition: border-color 0.3 ease-in-out;
+    }
+   
+    .Asksend{
+        background-color: #0a0571;
+        font-size: 20px;
+        font-weight: 500;
+
+    }
+  }
+}

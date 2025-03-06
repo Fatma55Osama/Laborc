@@ -1,0 +1,56 @@
+.parent {
+  min-height: 100vh;
+  .bgimg {
+    background-image: url(../assets/team-page-hero.jpg);
+    background-position: 50%;
+    background-size: cover;
+    min-height: 525px;
+    max-height: 90%;
+    h1 {
+      font-size: 60px;
+      font-weight: 600;
+      color: white;
+    }
+    .spanlink {
+      font-size: 16px;
+      color: white;
+    }
+  }
+  .personteam {
+    min-height: 700px;
+    max-height: 90%;
+  }
+  .carddiv {
+    margin: 100px 0;
+    .divimg {
+      overflow: hidden;
+    }
+    .imgcard {
+      border: none;
+      border-radius: 0px !important;
+      transform: scale(1.1);
+      transition: all 0.4s ease-in-out;
+    }
+    .cardbody {
+      padding-left: 0 !important;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .titlecard {
+      font-size: 24px;
+      font-weight: 600;
+      color: #10002b;
+    }
+    .textcard {
+      font-size: 16px;
+      color: #6c757d;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+    .bgimg {
+        h1{
+            font-size: 30px !important;
+        }
+    }
+}

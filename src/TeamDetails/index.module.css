@@ -1,0 +1,85 @@
+.parent {
+  min-height: 100vh;
+  .bgimg {
+    background-image: url(../assets//team-page-hero.jpg);
+    background-position: 50%;
+    background-size: cover;
+    min-height: 525px;
+    max-height: 90%;
+    h1 {
+      font-size: 60px;
+      font-weight: 600;
+      color: white;
+    }
+    .spanlink {
+      font-size: 16px;
+      color: white;
+    }
+  }
+  .middeldiv {
+    min-height: 1000px;
+    max-height: 90%;
+  }
+  .divimgzoom {
+    overflow: hidden;
+
+    img {
+      border-radius: 0;
+      border: none;
+      transform: scale(1.03);
+      transition: all 0.4s ease-in-out;
+    }
+  }
+  .experince {
+    background-color: #f1f5fd;
+    min-height: 430px;
+    max-height: 90%;
+    padding: 24px;
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #10002b;
+    }
+    p {
+      font-size: 16px;
+      color: #6c757d;
+      margin: 0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        color: #10002b;
+        font-size: 18px;
+        .facheck {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          border: 1px solid #4a43dd;
+          color: #4a43dd;
+          font-size: 12px;
+        }
+      }
+    }
+    .emails {
+      .social {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #e0e3fa;
+        color: #10002b;
+      }
+    }
+  }
+  .part2 {
+    h2 {
+      font-size: 32px;
+      color: #10002b;
+      font-weight: 600;
+    }
+    p {
+      color: #6c757d;
+      font-size: 16px;
+    }
+  }
+}

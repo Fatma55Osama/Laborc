@@ -1,0 +1,115 @@
+.div5 {
+  min-height: 0px !important;
+  max-height: 90%;
+  background-color: #f1f5fd;;
+  .videodiv {
+    button {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      border: none;
+      span {
+        border-radius: 4px;
+        border-left: 15px solid #4a43dd;
+        border-top: 9px solid transparent;
+        border-bottom: 9px solid transparent;
+      }
+    }
+  }
+  .all_contentdiv{
+    margin-bottom: 100px;
+  }
+  .contentdiv{
+    font-family: "Sora", serif;
+    width: 400px;
+    border-radius: 8px;
+    h4{
+      font-weight: 600;
+      font-size: 20px;
+
+    }
+    p{
+      color: #6c757d;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+  .coverimg{
+    height: 80px;
+    width: 80px;
+    background-color: #F1F5FD;
+    border-radius: 50%;
+  }
+  .modal{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #6c757d;
+  }
+}
+  @media screen and (max-width:767px) {
+    .div5{
+        min-height: 100vh;
+        max-height: 90%;
+        h1{
+          font-weight: 600;
+          font-size: 27px;
+          margin-top: 7%;
+          text-align: center;
+        }
+        span{
+          font-size: 18px !important;
+        }
+        .logo2{
+          width: 25px;
+        }
+        .videodiv {
+          display: none ;
+        }
+        .all_contentdiv{
+           display: flex !important;
+           flex-direction: row;
+           flex-wrap: wrap;
+           gap: 10px;
+           margin-bottom: 50px !important;
+           .contentdiv{
+            width: 280px !important;
+            text-align: center;
+            
+           }
+        }
+      }
+  }
+  @media screen and (max-width:1024px) and (min-width:768px) {
+    .div5{
+        min-height: 100vh;
+        max-height: 90%;
+        h1{
+          font-weight: 600;
+          font-size: 30px;
+          text-align: center;
+        }
+        span{
+          font-size: 18px !important;
+        }
+        .logo2{
+          width: 25px;
+        }
+        .videodiv {
+          display: none ;
+        }
+        .all_contentdiv{
+           display: flex !important;
+           flex-direction: row;
+           flex-wrap: wrap;
+           gap: 10px;
+           margin-bottom: 50px !important;
+           .contentdiv{
+            width: 310px !important;
+            
+           }
+        }
+      }
+  }

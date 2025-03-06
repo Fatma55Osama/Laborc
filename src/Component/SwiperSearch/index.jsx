@@ -1,0 +1,91 @@
+import React, { useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay'
+import { Pagination, Autoplay } from 'swiper/modules';
+import boy from '../../assets/service2-img4.png'
+import girldoctor from '../../assets/service2-img3.png'
+import anbob from '../../assets/service2-img1.png'
+import doctor from '../../assets/service2-img5.png'
+import circlehand from '../../assets/service2-img2.png'
+import { RiArrowRightUpLine } from "react-icons/ri";
+import './index.scss'
+import { Link } from 'react-router-dom';
+export default function SwiperSearch() {
+    const [swiper, setSwiper] = useState([{ img: anbob, neme: "Chemical Analysis" }, { img: circlehand, neme: "Chemical Analysis" }, { img: girldoctor, neme: "Chemical Analysis" }, { img: boy, neme: "Chemical Analysis" }, { img: doctor, neme: "Chemical Analysis" }])
+    return (
+        <div className='col-12'>
+            <div className='col-12 swiper-container mb-5'>
+                <>
+                    <Swiper
+                        slidesPerView={4}
+                        spaceBetween={0}
+                        centeredSlides={false}
+                        pagination={{
+                            clickable: true,
+                            dynamicBullets: true,
+                        }}
+                        autoplay={{
+                            delay: 5000, // تشغيل تلقائي كل 2 ثانية
+                            disableOnInteraction: false, // يستمر بعد تدخل المستخدم
+                        }}
+                        loop={true} // يكرر السلايدر بشكل دائري
+                        modules={[Pagination, Autoplay]}
+                        className="mySwiper"
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1, 
+                            },
+                            576: {
+                                slidesPerView: 1, // صورتين عند الشاشات الصغيرة (موبايل)
+                            },
+                            768: {
+                                slidesPerView: 2, // ثلاث صور عند التابلت
+                            },
+                            1440: {
+                                spaceBetween: 30, 
+                                slidesPerView: 4, // أربع صور عند الشاشات الكبيرة
+                            }
+                        }}
+                    >
+                        {
+                            swiper.map((el, index) => {
+                                return (
+                                    <SwiperSlide key={index} className='position-relative imgswiper'>
+                                        <img src={el.img} alt="" width={294} height={381} />
+
+                                        <div className='position-absolute top-0  z-3 div_blueicon h-100 col-12  justify-content-end   ' >
+                                            <div className=' parent_line_up d-flex flex-column justify-content-between col-12 '>
+                                                <div className='line_up  d-flex justify-content-center align-items-center'>
+                                                    <RiArrowRightUpLine className="white-icon" />
+                                                </div>
+                                                <div className='col-12  h-50 d-flex justify-content-center align-items-center'>
+                                                    <div className='divimgcontent col-10  mt-lg-3 mb-lg-0 mb-md-5 rounded-5 d-flex flex-column'> 
+                                                            <Link to={`/Deatailesresearch/${el.documentId}`} className='nav-link rounded-3 p-3 d-flex flex-column gap-3'>{el.neme}<br/> <span>Read More <RiArrowRightUpLine className="white2-icon" /></span>  </Link>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </SwiperSlide>
+
+                                )
+                            })
+                        }
+                      
+
+                    </Swiper>
+
+                </>
+            </div>
+
+            <div className="swiper-pagination">
+
+            </div>
+
+        </div>
+    )
+}

@@ -1,0 +1,208 @@
+.div6{
+    min-height: 300px;
+    max-height: 90%;
+    background-color: #4a43dd;
+}
+.part1{
+    h1{
+       font-weight: 600;
+       font-size: 44px;
+       color: white;
+
+      }  
+
+}
+.part2{
+    .btn1{
+        background-color: white;
+        color: #10002B;
+        font-size: 16px;
+        font-weight: 600;
+
+        .black-icon{ 
+            color: #10002B;
+            font-size: 20px;
+            font-weight: 600;
+
+        }
+    }
+    .btn2{
+        background: transparent;
+        color: white;
+        font-size:16px;
+        font-weight: 600;
+        border: 1px solid white;
+        .white-icon{
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+}
+.div7{
+    min-height: 430px;
+    max-height: 90%;
+}
+.section1{
+    p{
+        font-size: 16px;
+        font-weight: 400;
+        color: #6c757d;
+    }
+    .bluecircle{
+        width: 50px;
+        height: 50px;
+        background-color: #EDECFC;
+        border-radius: 50%;
+        .icons{
+           color:#4a43dd ;
+           font-size: 20px;   
+        }
+    }
+}
+.section2{
+    margin-bottom: 5px;
+    ul{
+        h2{
+            font-size: 24px;
+            font-weight: 600;
+
+        }
+        list-style-type: none;
+        li{
+            font-size: 16px;
+            font-weight: 400;
+            color: #6c757d;
+
+        }
+    }
+}
+.section3{
+
+    ul{
+        list-style-type: none;
+        h2{
+            font-size: 24px;
+            font-weight: 600;
+
+        }
+        li{
+            font-size: 16px;
+            font-weight: 400;
+            color: #6c757d;
+            .icon2{
+                color: black;
+                font-size: 24px;
+            }
+            .icon3{
+                color: black;
+                font-size: 40px;
+            }
+        }
+    }
+}
+@media screen and (max-width:1024px) and (min-width:768px) {
+    .part1{
+      
+        h1{
+            font-size: 29.8px;
+        }
+    }
+    .parentparts{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+    .part2{
+        display: flex !important;
+        justify-content: start !important;
+        align-items: baseline !important;
+        margin-top: 15px;
+
+    }
+    .allsections{
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start !important;
+        
+        .section1{
+            margin-top: 70px;
+        }
+        .section2{
+            margin-top: 30px;
+            ul{
+                
+                padding: 0;
+            }
+        }
+        .section3{
+            margin-top: 30px;
+            margin-left: 70px;
+            ul{
+                
+                padding: 0;
+            }
+        }
+    }
+}
+@media screen and (max-width:767px) {
+    .part1{
+      
+        h1{
+            font-size: 27px;
+            margin-top: 50px;
+        }
+    }
+    .parentparts{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+    .part2{
+        display: flex !important;
+        flex-direction: column;
+        justify-content: start !important;
+        align-items: baseline !important;
+        margin-top: 15px;
+        gap: 1rem;
+        margin-bottom:50px;
+
+    }
+    .allsections{
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start !important;
+        margin-right: 25px !important;
+        
+        .section1{
+            margin-top: 70px;
+            .bluecircle{
+                width: 40px;
+                height: 40px;
+                .icons{
+                    font-size: 17px;   
+                 }
+            }
+        }
+        .section2{
+            margin-top: 30px;
+            ul{
+                
+                padding: 0;
+            }
+        }
+        .section3{
+            margin-top: 30px;
+            ul{
+                
+                padding: 0;
+                .icon3{
+                    font-size: 40px;
+                }
+                margin-bottom: 50px;
+            }
+        }
+    }
+}

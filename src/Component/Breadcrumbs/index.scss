@@ -1,0 +1,18 @@
+.e-breadcrumb .e-breadcrumb-item {
+  list-style: none; /* إزالة الترقيم */
+  counter-increment: none; /* تعطيل العدّاد */
+  outline: none;
+}
+ol {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.e-breadcrumb .e-breadcrumb-item a {
+  color: inherit !important; /* يجعل اللون مثل النص العادي */
+  text-decoration: none !important; /* يمنع الخط السفلي */
+}
+.icon_faright {
+  color: white !important;
+  font-size: 16px; /* تحكّمي في الحجم إذا لزم الأمر */
+}

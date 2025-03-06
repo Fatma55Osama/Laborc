@@ -1,0 +1,75 @@
+.maindiv{
+    min-height: 100vh
+}
+.section1{
+    min-height: 525px;
+    max-height: 90%;
+    background-image: url(../assets/research-hero-bg.jpg);
+    background-position: 50%;
+    background-size: cover;
+  
+}
+.section1 > div{
+      h1{
+        font-size: 60px;
+        font-weight: 600;
+        color: white;
+        margin-left: 20px;
+    }
+    .spanbream{
+        font-size: 16px;
+        font-weight: 600 !important;
+        color: white;
+        margin-left: 22px ;
+    }
+}
+.section2{
+    min-height: 900px;
+    max-height: 90%;
+    .carddiv{
+        padding: 100px 0;
+        .cardtitle{
+            font-size: 20px;
+            font-weight: 600;
+            color: #10002b;
+        }
+        .cardtext{
+            font-size: 16px;
+            color: #6c757d;
+        }
+        .cardlink{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .iconright{
+            font-size: 19px;
+            /* font-weight: bold !important; */
+        }
+        .cardimg{
+             border-radius:0;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .section1{
+        h1{
+            margin-left: 0 !important;
+            font-size: 30px !important;
+        }
+        .spanbream{
+            margin-left: 0 !important;
+
+        }
+    }
+}
+@media screen and (max-width: 992px) and (min-width: 768px) {
+    .carddiv{
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+    .cardall{
+        width: 45% !important;
+    }
+}
