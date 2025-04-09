@@ -8,10 +8,7 @@
     background-image: url(../assets/page-title-5.jpg);
     background-position: 50%;
     background-size: cover;
-    .header {
-      position: absolute;
-      z-index: 50;
-    }
+
     .shap {
       position: relative;
       left: 0;
@@ -54,7 +51,7 @@
       button {
         position: relative;
         border: none;
-        color:#0a0571;
+        color: #0a0571;
         border-radius: 30px;
       }
       h3 {
@@ -86,17 +83,17 @@
       border: none;
       color: #0a0571;
       border-radius: 30px;
-     
-    } button::before {
-        content: "";
-        background-color:#4a43dd;
-        opacity: 0.1;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: block;
-        border-radius: 30px;
-      }
+    }
+    button::before {
+      content: "";
+      background-color: #4a43dd;
+      opacity: 0.1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 30px;
+    }
     h3 {
       font-size: 40px;
       font-weight: 600;
@@ -124,12 +121,51 @@
       outline: none;
       transition: border-color 0.3 ease-in-out;
     }
-   
-    .Asksend{
-        background-color: #0a0571;
-        font-size: 20px;
-        font-weight: 500;
 
+    .Asksend {
+      background-color: #0a0571;
+      font-size: 20px;
+      font-weight: 500;
     }
   }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+}
+@media screen and (max-width: 767px) {
+  .shap {
+    img {
+      width: 400px !important;
+    }
+  }
+  /* .textarea {
+    left: -2% !important;
+  } */
+  .alldiv {
+    .imgback {
+      .textcenter {
+        left: -2% !important;
+
+        h2 {
+          font-size: 30px !important;
+        }
+      }
+    }
+    .divquestion{
+      .section1{
+        h3{
+          font-size: 25px !important;
+        }
+      }
+      .answer{
+        font-size: 12px;
+      }
+    }
+    .send{
+      h3{
+        font-size: 25px !important;
+
+      }
+    }
+  }
+
 }

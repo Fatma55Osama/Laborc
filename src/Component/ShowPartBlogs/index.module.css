@@ -1,0 +1,83 @@
+#heightDiv {
+  min-height: 900px;
+  max-height: 90%;
+  background-color: #eaf1ff;
+  font-family: Open Sans, sans-serif;
+  color: #001837;
+  #updiv {
+    h4 {
+      border: 1px solid #001837;
+      font-weight: 700;
+      font-size: 11px;
+    }
+    #interest {
+      h2 {
+        font-weight: 600;
+        font-size: 50px;
+      }
+      #directblog {
+        border: 1px solid #001837;
+        font-size: 15px;
+      }
+    }
+  }
+  #downdiv {
+    #backcontent {
+      border-radius: 30px;
+      p {
+        font-size: 13px;
+        color: #666;
+        span {
+          color: #3772ff;
+        }
+      }
+      h3 {
+        font-size: 26px;
+        color: #001837;
+        font-weight: 600;
+        font-family: Raleway, sans-serif;
+      }
+    }
+    #parentLogoLink {
+      background-color: #eaf1ff;
+      border-top-left-radius: 35px;
+      padding: 12px 10px 10px 12px;
+      transform: translatex(4px) translateY(16px);
+      #logolink {
+        background-color: #001837;
+        color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  #interest {
+    h2 {
+      font-size: 38px !important ;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #interest {
+    h2 {
+      font-size: 25px !important ;
+    }
+  }
+  #backcontent{
+    width: 400px !important;
+    img{
+      width: 150px !important;
+      
+    }
+    h3 {
+      font-size: 20px !important;
+    }
+  }
+
+}

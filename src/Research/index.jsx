@@ -12,6 +12,7 @@ import { RiArrowRightUpLine } from 'react-icons/ri'
 import Ourworks from '../Component/Ourworks'
 import Footer from '../Component/Footer'
 import { getcategory } from '../Api/GetCategory'
+import SectionVideo2 from '../Component/SectionVideo2'
 
 export default function Research() {
   const [categoryreaserch, setCategoryreaserch] = useState([])
@@ -38,7 +39,6 @@ export default function Research() {
   return (
     <div className={styles.maindiv + " col-12"}>
       <div className={styles.section1 + " h-100 d-flex flex-column"}>
-        <Header />
         <div className='container d-flex flex-column justify-content-center  h-100 flex-grow-1  gap-2  '>
           <h1>Our Research</h1>
           <span className={styles.spanbream + ' d-flex flex-row align-items-center gap-1'}><Link to={"/"} className='nav-link'>Home</Link>  <FaAngleRight className='iconfaright' /> <Link to={"/research"} className='nav-link'> Our Research</Link></span>
@@ -73,7 +73,7 @@ export default function Research() {
         </div>
       </div>
       <Ourworks/>
-      <Footer/>
+      <SectionVideo2/>
       
     </div>
   )

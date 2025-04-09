@@ -28,6 +28,8 @@ import Footer from '../Component/Footer'
 import { useRecoilState } from 'recoil'
 import { $blocks, $isplay } from '../Store'
 import Video from '../Component/Video'
+import ShowPartBlogs from '../Component/ShowPartBlogs'
+import ShowPartTeams from '../Component/ShowPartTeams'
 export default function Homepage() {
   const [isplaying, setIsplaying] = useRecoilState($isplay)
   const [blocks, setBlocks] = useRecoilState($blocks)
@@ -38,7 +40,6 @@ export default function Homepage() {
         <div className='col-12 d-flex flex-column  gap-3 '>
 
 
-           <Header/>
           {/*Start nav */}
           {/* <div className='col-12  navpar py-3  d-flex justify-content-center  align-items-center'>
             <div style={{ boxShadow: "#00000038 -1px 4px 11px 0px" }} className='col-10 mt-3  bg-white py-2 rounded-5 d-flex justify-content-around align-items-center '>
@@ -189,7 +190,7 @@ export default function Homepage() {
         </div>
 
       </div> */}
-
+     <ShowPartBlogs/>
       <div className='col-12 div4  d-flex '>
         <div className='container  circlediv  d-flex flex-column justify-content-center align-items-center flex-grow-1 py-5 '>
 
@@ -264,7 +265,6 @@ export default function Homepage() {
           </div>
         </div>
       </div>
-
       {/* <div className='div5 col-12  d-flex justify-content-center'>
         <div className='col-10 '>
           <div className=' d-flex flex-column justify-content-center  align-items-center mt-4  gap-lg-5 gap-md-4'>
@@ -330,7 +330,8 @@ export default function Homepage() {
       </div>
 
       </div>
-       <Footer/>
+      <ShowPartTeams/>
+
     </div>
   )
 }

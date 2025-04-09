@@ -17,13 +17,22 @@
    display: none;
    z-index: 20;
 }
+.border_line_up{
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    transform: translateY(-4px) translateX(10px);
+    transition: all 0.4s ease-in-out;}
 .line_up{
     background-color: #0A0571;
     width: 50px;
     height: 50px;
+    right: 0;
+    top: 0;
     border-radius: 50%;
-    margin-left: 83%;
-   
+    transition: transform 0.4s ease-in-out;   
 
     .white-icon{
         color: white;
@@ -34,6 +43,7 @@
     background-color: #0A0571;
     color: white;
     transition: opacity 0.5s ease-in-out;
+    margin-right: 10%;
     .white2-icon{
         color: white;
         font-size: 22px;
@@ -46,12 +56,13 @@
     }
 }
 .imgswiper:hover .div_blueicon{
-   
-         display: flex;
-         
+   display: flex;
 }
 .imgswiper:hover .divimgcontent {
     animation: fadeInUp 0.5s ease-in-out;
+}
+.imgswiper:hover .line_up {
+    transform: scale(0.8); 
 }
 @keyframes fadeInUp {
     from {
@@ -63,6 +74,7 @@
         transform: translateY(0);
     }
 }
+
 @media screen and (max-width:1024px) and (min-width:768px) {
     .swiper-container{
        display: flex !important;
@@ -85,12 +97,15 @@
     flex-direction: column;
     justify-content: space-between !important;
    }
-    .line_up{
-    }
+    
     .imgswiper:hover .div_blueicon{
    
         display: flex !important;
         
+}
+.border_line_up{
+    transform: translateY(0px) translateX(-20px);
+
 }
 // .imgswiper:hover .divimgcontent {
 //    animation: fadeInUp 0.5s ease-in-out;
@@ -101,9 +116,16 @@
         display: flex!important;
      }
      .line_up{
-        margin-left: 80%;
+        // margin-left: 80%;
     }
-    
+    .divimgcontent{     margin-right: 18% !important;
+       }
+       .border_line_up{
+        display: flex ;
+        justify-content: center;
+        align-self: center;
+        transform: translateY(-4px) translateX(90px)!important;
+       }
 element.style {
     width: 267px;
 }

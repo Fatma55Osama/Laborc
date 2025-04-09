@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+.blogall {
+  min-height: 100vh;
+  max-height: 90%;
+}
+#backgimg {
+  min-height: 520px;
+  max-height: 90%;
+  background-image: url(../assets/Blogimges/titlebar-blog.webp);
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+
+  #textbloge{
+    color: white;
+    h4{
+      font-size: 50px;
+      font-weight: 600;
+    }
+    .linkfont {
+        font-size: 20px;
+    }
+  }
+}
+#blogcategorydiv{
+  padding: 150px 0;
+}
+.divcard{
+  height: 485px;
+    .circledesign{
+    border-radius: 50%;
+    background-color: #08349e;
+    width: 70px;
+    height: 70px;
+    margin-left: 68%;
+    top: 45%;
+    span{
+        font-weight: 600;
+    }
+  }
+h5{
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #08349e;
+}
+.title{
+    font-size: 28px;
+    color: #101a30;
+    font-weight: 600;
+    font-family: "Afacad", sans-serif;}
+}
+.cardtext{
+    font-size: 15px;
+    /* font-family: "Afacad", sans-serif; */
+    color: #6a6a6a;
+}
+
+

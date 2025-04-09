@@ -26,6 +26,7 @@
     border-radius: 10px;
 
   }
+ 
   .bgcontainerimg {
     width: 86%; 
     height: 70% !important;
@@ -106,4 +107,88 @@
     font-size:30px
   }
 
+}
+@media screen and (max-width:767px) {
+  .all {
+    width: 100%;
+    min-height: 680px !important;}
+  #allpoints{
+    img{
+      width:370px !important ;
+    }
+   }
+   .points{
+    width: 340px;
+    margin-top: 20%;
+   }
+   .allhexagon{
+    h5{
+      font-size: 15px;
+    }
+    p{
+      font-size: 7px;
+    }
+  }
+  .hexagon {
+    width: 50px;
+    height: 62px;}
+  .lines{
+    width: 50px;
+  }
+  .bookban{
+    font-size: 18px;
+  }
+  #backoverlay{
+     width: 150px !important;
+  }
+  .textandhexagon{
+    height: 180% !important;
+    width: 110% !important;
+   }
+   #button1 {
+    width: 60px !important;
+    height: 60px !important;
+    span {
+      border-left: 15px solid #4a43dd !important;
+      border-top: 10px solid transparent !important;
+      border-bottom: 10px solid transparent !important;
+    }
+  
+  }
+  .texth4 {
+    margin-top: -20% !important;
+    h4 {
+      font-size: 20px ;
+    }
+  }
+  .iframevido{
+    width: 350px !important;
+    height: 250px !important;
+  }
+}
+@media screen and (max-width:1024px) and (min-width:768px) {
+ #allpoints{
+  img{
+    width:750px !important ;
+  }
+ }
+ .points{
+  width: 750px;
+ }
+ .allhexagon{
+  h5{
+    font-size: 20px;
+  }
+  p{
+    font-size: 12px;
+  }
+}
+.hexagon {
+  width: 70px;
+  height: 82px;}
+.lines{
+  width: 100px;
+}
+
+ 
 }

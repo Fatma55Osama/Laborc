@@ -23,7 +23,6 @@ export default function TeamDetails() {
   return (
     <div className={styles.parent + " col-12"}>
       <div className={styles.bgimg + " d-flex flex-column h-100"}>
-        <Header />
         <div className='container d-flex flex-column flex-grow-1 justify-content-center gap-2'>
           <h1>Team Details</h1>
           <span className={styles.spanlink + ' d-flex flex-row align-items-center gap-1 '}><Link to={"/"} className='nav-link'>Home</Link><FaAngleRight /><Link to={'/team'} className='nav-link'>Our Team Members</Link>
@@ -76,7 +75,6 @@ export default function TeamDetails() {
           </div>
         </div>
       </div>
-       <Footer/>
     </div>
   )
 }

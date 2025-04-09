@@ -38,7 +38,6 @@ export default function Aboutpage() {
   return (
     <div className={styles.alldivs + " col-12  d-flex flex-column "}>
       <div className={styles.divimg + " col-12 d-flex flex-column  "}>
-        <Header />
         <div className='container d-flex flex-column justify-content-center h-100 flex-grow-1 '>
           <div className={styles.textdiv + ' col-12  d-flex flex-column justify-content-center gap-2 '}>
             <h1>About Laborc</h1>
@@ -240,7 +239,6 @@ export default function Aboutpage() {
       </div> */}
       <Ourworks/>
        <Video/>
-       <Footer/>
     </div>
   )
 }

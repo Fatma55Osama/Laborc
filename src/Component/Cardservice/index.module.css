@@ -1,0 +1,68 @@
+#carddetail {
+  font-family: Raleway, sans-serif;
+  width:480px;
+
+  #contentcard {
+    border-radius: 30px;
+    width: 458px;
+    height: 570px;
+    img {
+      border-radius: 30px;
+    }
+    h3{
+        font-size: 26px;
+        font-weight: 600;
+        color: #001837;
+
+    }
+    span{
+        text-transform: uppercase;
+       color:#3772ff ; 
+       font-size: 13px;
+       letter-spacing: .5px;
+       font-weight: 500;
+    }
+    p{
+        color: #6a7391;
+        font-size: 15px;
+        font-family: Open Sans, sans-serif;
+    }
+    #parentLogoLink {
+        background-color: #eaf1ff;
+        border-top-left-radius: 35px;
+        padding: 12px 10px 10px 12px;
+        transform: translatex(25px) translateY(38px);
+        #logolink {
+          background-color: #001837;
+          color: white;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+          font-weight: 600;
+        }
+      
+      }
+
+     }
+}
+@media screen and (max-width: 767px) {
+  #parentLogoLink{
+    transform: translatex(25px) translateY(60px) !important;
+
+  }
+  #heightText{
+    height: 200px !important;
+  }
+  #carddetail{
+    width: 480px;
+  }
+  #contentcard {
+    width: 400px !important;
+    height: 500px !important; 
+    img{
+      width:370px; 
+      height:250px;
+    }
+  }
+}

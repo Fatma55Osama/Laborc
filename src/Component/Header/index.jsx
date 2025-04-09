@@ -9,16 +9,17 @@ import { FaAngleDown, FaArrowRightLong, FaFacebookF, FaLinkedinIn, FaXmark, FaXT
 import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md'
 import { PiMapPinLine } from 'react-icons/pi'
 import { IoLogoInstagram } from 'react-icons/io5'
-import {  useRecoilState } from 'recoil'
+import { useRecoilState } from 'recoil'
 import { $active } from '../../Store'
+import { Accordion } from 'react-bootstrap'
 export default function Header() {
   const [modal, setModal] = useState(false)
-  const [active,setActive]=useRecoilState($active)
+  const [active, setActive] = useRecoilState($active)
   return (
     <div className='col-12 '>
       {/*Start nav */}
       <div className='col-12  navpar  py-lg-3   d-flex justify-content-center  align-items-center'>
-        <div className='nav_rounded col-12 col-lg-10 col-md-12 mt-lg-3  bg-white py-lg-2 d-flex justify-content-around align-items-center '>
+        <div className='nav_rounded col-12 col-lg-10 col-md-12  bg-white py-lg-3 d-flex justify-content-between px-lg-5 align-items-center '>
           <img className='me-5 me-md-5 me-lg-5 d-none d-md-none d-lg-flex ' src={logo} width="135px" height="35px" alt="" />
           <img className='d-flex d-md-flex d-lg-none' src={logoblue} width={120} alt="" />
           <div className='border_icon d-flex d-md-flex d-lg-none' onClick={() => setModal(true)}>
@@ -39,11 +40,22 @@ export default function Header() {
                   <div className="section4 col-11">
                     <ul className='d-flex flex-column gap-3'>
                       <Link className='nav-link' to="/">Home</Link>
-                      <Link  className='nav-link' to="/about">About Us</Link>
+                      <Link className='nav-link' to="/about">About Us</Link>
                       <Link className='nav-link' to="/research">Research</Link>
+                      <Link className='nav-link' to="/service">Services</Link>
+                      <Accordion  className='col-12'>
+                        <Accordion.Item eventKey="0">
+                          <Accordion.Header>Pages</Accordion.Header>
+                          <Accordion.Body>
+                            <li> <Link to={'/faq'} className='nav-link'>FAQ's</Link></li>
+                            <li> <Link to={'/team'} className='nav-link'>Team</Link></li>
+                            <li> <Link to={'*'} className='nav-link'>Error 404</Link></li>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
                       <Link className='nav-link' to="/Contactus">Contact </Link>
                     </ul>
-                    <Link className='GetQuote nav-link col-7 col-md-3 mt-3 rounded-5 py-2 px-3 '  to="Contactus"> Get A Quote <FaArrowRightLong /></Link>
+                    <Link className='GetQuote nav-link col-7 col-md-3 mt-3 rounded-5 py-2 px-3 ' to="Contactus"> Get A Quote <FaArrowRightLong /></Link>
                   </div>
 
                   <div className="section5 col-11">
@@ -83,8 +95,9 @@ export default function Header() {
           <div className='col-lg-6  navpar_white  '>
             <ul className='d-flex justify-content-between align-items-center align-content-center mt-2'>
               <Link className='nav-link' to="/">Home</Link>
-              <Link  className='nav-link' to="/about">About Us</Link>
-              <Link  className='nav-link' to="/research">Research</Link>
+              <Link className='nav-link' to="/about">About Us</Link>
+              <Link className='nav-link' to="/research">Research</Link>
+              <Link className='nav-link' to="/service">Services</Link>
               <span className='pages-container'>Pages <FaAngleDown />
                 <ul className='dropdown-menu pagesmenu'>
                   <li> <Link to={'/faq'} className='nav-link'>FAQ's</Link></li>
@@ -92,12 +105,7 @@ export default function Header() {
                   <li> <Link to={'*'} className='nav-link'>Error 404</Link></li>
                 </ul>
               </span>
-              <span className='pages-container'>Blog <FaAngleDown />
-                <ul className='dropdown-menu pagesmenu' style={{height:"100px"}}>
-                  <li> <Link to={'/blog'} className='nav-link'>Blog</Link></li>
-                  <li><Link to={'/blogdetalis/:id'} className='nav-link'>Blog Details</Link></li>
-                </ul>
-              </span>
+              <Link className='nav-link' to={"/blog"}>Blog </Link>
 
               <Link className='nav-link' to="/Contactus">Contact </Link>
             </ul>

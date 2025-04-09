@@ -13,7 +13,6 @@ export default function Contactus() {
   return (
     <div className={styles.parentalldiv + " col-12"}>
       <div className={styles.div1 + " col-12 d-flex flex-column h-100 "}>
-        <Header />
         <div className={styles.textdiv + ' container col-11  flex-grow-1 d-flex flex-column justify-content-center gap-2'}>
           <h1>Contact Us</h1>
           <span className='d-flex align-items-center '>
@@ -108,7 +107,6 @@ export default function Contactus() {
           </div>
         </div>
       </div>
-      <Footer />
 
     </div>
   )

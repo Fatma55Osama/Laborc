@@ -22,9 +22,7 @@ export default function FAQ() {
   return (
     <div className={styles.alldiv + " col-12"}>
       <div className={styles.imgback + ' col-12 d-flex '}>
-        <div className={styles.header + " col-12"}>
-          <Header />
-        </div>
+     
         <div className={styles.shap + ' '}>
           <img src={shap} alt="" width={475} />
         </div>
@@ -102,7 +100,6 @@ export default function FAQ() {
           </form>
          </div>
       </div>
-      <Footer />
     </div>
   )
 }

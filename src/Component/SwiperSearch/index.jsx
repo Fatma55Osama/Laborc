@@ -35,7 +35,7 @@ export default function SwiperSearch() {
                         className="mySwiper"
                         breakpoints={{
                             0: {
-                                slidesPerView: 1, 
+                                slidesPerView: 1,
                             },
                             576: {
                                 slidesPerView: 1, // صورتين عند الشاشات الصغيرة (موبايل)
@@ -44,7 +44,7 @@ export default function SwiperSearch() {
                                 slidesPerView: 2, // ثلاث صور عند التابلت
                             },
                             1440: {
-                                spaceBetween: 30, 
+                                spaceBetween: 30,
                                 slidesPerView: 4, // أربع صور عند الشاشات الكبيرة
                             }
                         }}
@@ -56,15 +56,18 @@ export default function SwiperSearch() {
                                         <img src={el.img} alt="" width={294} height={381} />
 
                                         <div className='position-absolute top-0  z-3 div_blueicon h-100 col-12  justify-content-end   ' >
-                                            <div className=' parent_line_up d-flex flex-column justify-content-between col-12 '>
-                                                <div className='line_up  d-flex justify-content-center align-items-center'>
-                                                    <RiArrowRightUpLine className="white-icon" />
-                                                </div>
-                                                <div className='col-12  h-50 d-flex justify-content-center align-items-center'>
-                                                    <div className='divimgcontent col-10  mt-lg-3 mb-lg-0 mb-md-5 rounded-5 d-flex flex-column'> 
-                                                            <Link to={`/Deatailesresearch/${el.documentId}`} className='nav-link rounded-3 p-3 d-flex flex-column gap-3'>{el.neme}<br/> <span>Read More <RiArrowRightUpLine className="white2-icon" /></span>  </Link>
+                                            <div className=' parent_line_up d-flex flex-column justify-content-between align-items-end col-12 '>
+                                                <div className='border_line_up d-flex justify-content-center align-items-center'>
+                                                    <div className='line_up  d-flex justify-content-center align-items-center'>
+                                                        < RiArrowRightUpLine className="white-icon" />
                                                     </div>
-                                                   
+                                                </div>
+
+                                                <div className='col-12  h-50 d-flex justify-content-center align-items-center'>
+                                                    <div className='divimgcontent col-md-10 col-8  mt-lg-3 mb-lg-0 mb-md-5 rounded-5 d-flex flex-column'>
+                                                        <Link to={`/Deatailesresearch/${el.documentId}`} className='nav-link rounded-3 p-3 d-flex flex-column gap-3'>{el.neme}<br /> <span>Read More <RiArrowRightUpLine className="white2-icon" /></span>  </Link>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -75,7 +78,7 @@ export default function SwiperSearch() {
                                 )
                             })
                         }
-                      
+
 
                     </Swiper>
 
