@@ -39,6 +39,7 @@
         border-radius: 30px;
         position: relative;
         object-fit: cover;
+    
       }
       .divbtn {
         margin-top: -40px;
@@ -126,5 +127,113 @@
         } 
       }
     }
+  }
+}
+@media screen and (max-width: 767px) {
+  #textdecor{
+    h2{
+      font-size: 25px !important;
+    }
+  }
+  #div1 {
+    width: 100%;
+    img {
+      width: 340px;
+      height: 328px;
+  
+    }
+    #opininCleintContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: baseline !important;
+      P{
+        margin-top:18px !important;
+        font-size: 17px !important;
+      }
+      span{
+        font-size: 12px !important;
+      }
+      .iconquote{
+        margin-top: 20px;
+      }
+    }
+    .sectionExplor{
+      h3{
+        font-size: 30px !important;
+      }
+      p{
+        font-size: 13px !important;
+      }
+      span{
+        font-size: 14px;
+      }
+      .imgestwo{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        img{
+          width: 330px;
+          height: 330px;
+        }
+      }
+    }
+  }
+  #twodiv{
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  #textdecor{
+    h2{
+      font-size: 35px !important;
+    }
+  }
+  #div1 {
+    width: 100%;
+    img {
+      width: 650px;
+      height: 328px;
+  
+    }
+    #opininCleintContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: baseline !important;
+      P{
+        margin-top:18px !important;
+        font-size: 17px !important;
+      }
+      span{
+        font-size: 12px !important;
+      }
+      .iconquote{
+        margin-top: 20px;
+      }
+    }
+    .sectionExplor{
+      h3{
+        font-size: 30px !important;
+      }
+      p{
+        font-size: 13px !important;
+      }
+      span{
+        font-size: 14px;
+      }
+      .imgestwo{
+        /* display: flex;
+        flex-wrap: wrap;
+        gap: 30px; */
+        img{
+          width: 330px;
+          height: 330px;
+        }
+      }
+    }
+  }
+  #twodiv{
+    display: flex;
+    flex-direction: column;
   }
 }

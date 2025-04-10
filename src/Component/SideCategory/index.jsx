@@ -3,14 +3,22 @@ import styles from './index.module.css'
 import { TbFlask2, TbFlask2Filled } from "react-icons/tb";
 import { Link } from 'react-router-dom';
 import { RiArrowRightUpLine } from 'react-icons/ri'
+import ShowPartBlogs from '../ShowPartBlogs';
 export default function SideCategory() {
+
   return (
     <div className='col-3  container d-flex flex-column gap-5 ' id={styles.div2}>
       <div className=''>
         <div className='col-12 pt-3 ps-3' id={styles.layoutbord}>
-          <div className='d-flex gap-1'>
+          <div className='d-flex flex-column'>
+            <div className='d-flex gap-1'>
+
             <TbFlask2 style={{ fontSize: "25px", color: "#3772ff" }} />
             <h4>Recent Blogs</h4>
+            </div>
+            <div className='col-12 d-flex justify-content-center align-items-center'>
+              <ShowPartBlogs showheader={false} wrapperClass={styles.detailsblogstyle} blogsCount={2} backcontennt={styles.backcontennt} downdiv={styles.downdiv} logoicon={false} deletePadding={styles.deletePadding}/>
+            </div>
           </div>
         </div>
       </div>

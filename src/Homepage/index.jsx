@@ -190,7 +190,7 @@ export default function Homepage() {
         </div>
 
       </div> */}
-     <ShowPartBlogs/>
+     <ShowPartBlogs blogsCount={4}/>
       <div className='col-12 div4  d-flex '>
         <div className='container  circlediv  d-flex flex-column justify-content-center align-items-center flex-grow-1 py-5 '>
 

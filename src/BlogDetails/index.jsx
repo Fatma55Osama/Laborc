@@ -28,9 +28,9 @@ export default function BlogDetails() {
       <div className='col-12 d-flex flex-column justify-content-between align-items-center' id={styles.section1}>
         <div id={styles.bgImg} className=' text-white d-flex justify-content-start align-items-center'>
           <div className=' container ms-0 col-12 d-flex flex-column justify-content-start'>
-            <div className='  col-8  d-flex flex-column justify-content-center gap-2' id={styles.textdecor}>
+            <div className='  col-md-8  d-flex flex-column justify-content-center gap-2' id={styles.textdecor}>
               <h2>{DetailsBlog.title2}</h2>
-              <div className='d-flex align-items-center gap-1'>
+              <div className='d-flex align-items-center gap-1 '>
                 <Link className='nav-link'>Home</Link>
                 <FaAngleRight />
                 <Link className='nav-link'>Blog</Link>
@@ -48,7 +48,7 @@ export default function BlogDetails() {
         <div className=' me-0 ms-0 row d-flex' id={styles.twodiv}>
           <div className='col-8  container' id={styles.div1}>
             <div className=''>
-              {DetailsBlog.img_card && DetailsBlog.img_card.url && (<img src={domain + DetailsBlog.img_card.url} width={900} height={828} alt="" />)}
+              {DetailsBlog.img_card && DetailsBlog.img_card.url && (<img src={domain + DetailsBlog.img_card.url} width={900} height={828} alt="" className={styles.imgurlmain} />)}
               <div className={styles.divbtn}>
                 <button className='rounded-5 text-white py-1 px-3'>{DetailsBlog.title1}</button>
               </div>
@@ -63,9 +63,9 @@ export default function BlogDetails() {
                     <p className={styles.pragraph1 + ' m-0 mt-1'}>{DetailsBlog.details_blog.pargraph1}</p>
                   </div>
                   <div className={styles.opininCleint}>
-                    <div className='container d-flex justify-content-between align-items-center'>
+                    <div className='container d-flex justify-content-between align-items-center' id={styles.opininCleintContainer}>
                       <div className={styles.iconquote + " d-flex justify-content-center align-items-center"}><MdFormatQuote /></div>
-                      <div className=' col-11'>
+                      <div className='   col-lg-11'>
                         <p>{DetailsBlog.details_blog.opinion_user}</p>
                         <span className='d-flex gap-2'>- {DetailsBlog.details_blog.Who_opinoin}</span>
                       </div>
@@ -79,7 +79,7 @@ export default function BlogDetails() {
                       <img width={455} height={355} src={domain+DetailsBlog.details_blog.img2[0].url} alt="" />
                       <img width={455} height={355} src={domain+DetailsBlog.details_blog.img2[1].url}  alt="" />
                     </div>
-                    <div className='d-flex flex-column gap-3  pb-5 mb-5 '>
+                    <div className='d-flex flex-column gap-3  pb-5 mb-lg-5 '>
                       <div className='d-flex gap-3'>
                         <div className={styles.covermark + " d-flex justify-content-center align-items-center"}><IoCheckmarkOutline /></div>
                         <span>{DetailsBlog.details_blog.Li1}</span>

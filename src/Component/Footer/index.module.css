@@ -168,8 +168,10 @@
         gap: 1rem;
         margin-bottom:50px;
 
+
     }
-    .allsections{
+
+     .allsections{ 
         display: flex !important;
         flex-direction: row;
         flex-wrap: wrap;
@@ -199,10 +201,13 @@
                 
                 padding: 0;
                 .icon3{
-                    font-size: 40px;
+                    font-size: 30px;
                 }
                 margin-bottom: 50px;
             }
         }
-    }
+    } 
+
+
+
 }

@@ -68,8 +68,8 @@ export default function App() {
           </Route>
 
           <Route path='/'>
-            <Route path='login' element={<Login />}></Route>
-            <Route path='register' element={<Register />}></Route>
+            <Route path='loginAdmin' element={<Login />}></Route>
+            <Route path='registerAdmin' element={<Register />}></Route>
             <Route path='*' element={<Errorpage />}></Route>
           </Route>
 

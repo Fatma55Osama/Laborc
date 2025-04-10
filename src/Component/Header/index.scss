@@ -67,29 +67,39 @@
     justify-content: space-between !important;
     align-items: center !important;
   }
-  .accordion-item {
-    padding: 0 !important;
+  .accordion-button:not(.collapsed) {
+    background-color: transparent;
+  }
+  .accordion-itemm {
+    // padding: 1px !important;
     margin-bottom: 0 !important;
   }
-  .accordion {
+  .accordionn {
     width: 100% !important;
     box-shadow: none !important;
     padding: 0 !important;
     --bs-accordion-btn-padding-x: 0rem;
     --bs-accordion-btn-padding-y: 0.2rem;
     --bs-accordion-active-color: #000000;
-    .accordion-button {
+    --bs-accordion-border-width: 0!important;
+    margin: 0 !important;
+    .accordion-buttonn {
       font-weight: 530;
+      padding: 0 !important;
+      // background-color: transparent;
     }
   }
-  .accordion-button::after {
+  .accordion-buttonn::after {
     flex-shrink: 0;
     width: 1.25rem !important;
     height: 1.25rem !important;
     margin-left: auto !important;
     content: "";
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M1.5 8h13M8 1.5v13'/%3e%3c/svg%3e") !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M1.5 8h13M8 1.5v13'/%3e%3c/svg%3e") !important ;
     transition: var(--bs-accordion-btn-icon-transition) !important;
+  }
+  .accordion-button:focus {
+    box-shadow: none;
   }
   .border_icon {
     border: 1px solid black;
@@ -118,8 +128,8 @@
     ul {
       padding: 0;
       .nav-link {
-        font-size: 18px;
-        font-weight: 480;
+        font-size: 16px;
+        // font-weight: 480;
         color: black;
       }
     }
@@ -137,8 +147,11 @@
         color: #6c757d;
         font-size: 16px;
       }
+      .icon2{
+        font-size: 20px;
+      }
       .icon3 {
-        font-size: 30px;
+        font-size: 20px;
       }
       margin-bottom: 50px;
     }
@@ -183,22 +196,26 @@
     justify-content: space-between !important;
     align-items: center !important;
   }
-  .accordion-item {
+  .accordion-itemm {
     padding: 0 !important;
     margin-bottom: 0 !important;
+    border: none;
   }
-  .accordion {
+  .accordionn {
     width: 100% !important;
     box-shadow: none !important;
     padding: 0 !important;
     --bs-accordion-btn-padding-x: 0rem;
     --bs-accordion-btn-padding-y: 0.2rem;
     --bs-accordion-active-color: #000000;
-    .accordion-button {
-      font-weight: 530;
+  
+  }  
+  .accordion-buttonn {
+      font-weight: 500 !important;
+      padding: 0;
+      // font-weight: 500 !important;
     }
-  }
-  .accordion-button::after {
+  .accordion-buttonn::after {
     flex-shrink: 0;
     width: 1.25rem !important;
     height: 1.25rem !important;
@@ -206,6 +223,11 @@
     content: "";
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M1.5 8h13M8 1.5v13'/%3e%3c/svg%3e") !important;
     transition: var(--bs-accordion-btn-icon-transition) !important;
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: transparent;
+    box-shadow: none;
+    font-weight: 500;
   }
   .border_icon {
     border: 1px solid black;
@@ -235,7 +257,7 @@
       padding: 0;
       .nav-link {
         font-size: 18px;
-        font-weight: 500;
+        // font-weight: 500;
         color: black;
       }
     }
@@ -254,7 +276,7 @@
         font-size: 16px;
       }
       .icon3 {
-        font-size: 30px;
+        // font-size: 30px;
       }
       margin-bottom: 50px;
     }

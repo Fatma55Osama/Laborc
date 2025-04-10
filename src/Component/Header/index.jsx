@@ -12,6 +12,7 @@ import { IoLogoInstagram } from 'react-icons/io5'
 import { useRecoilState } from 'recoil'
 import { $active } from '../../Store'
 import { Accordion } from 'react-bootstrap'
+import { GrLocation } from 'react-icons/gr'
 export default function Header() {
   const [modal, setModal] = useState(false)
   const [active, setActive] = useRecoilState($active)
@@ -43,9 +44,9 @@ export default function Header() {
                       <Link className='nav-link' to="/about">About Us</Link>
                       <Link className='nav-link' to="/research">Research</Link>
                       <Link className='nav-link' to="/service">Services</Link>
-                      <Accordion  className='col-12'>
-                        <Accordion.Item eventKey="0">
-                          <Accordion.Header>Pages</Accordion.Header>
+                      <Accordion  className='col-12 accordionn'>
+                        <Accordion.Item eventKey="0" className='accordion-itemm'>
+                          <Accordion.Header className='accordion-buttonn'>Pages</Accordion.Header>
                           <Accordion.Body>
                             <li> <Link to={'/faq'} className='nav-link'>FAQ's</Link></li>
                             <li> <Link to={'/team'} className='nav-link'>Team</Link></li>
@@ -53,16 +54,18 @@ export default function Header() {
                           </Accordion.Body>
                         </Accordion.Item>
                       </Accordion>
+                      <Link className='nav-link' to="/blog">Blog </Link>
+
                       <Link className='nav-link' to="/Contactus">Contact </Link>
                     </ul>
-                    <Link className='GetQuote nav-link col-7 col-md-3 mt-3 rounded-5 py-2 px-3 ' to="Contactus"> Get A Quote <FaArrowRightLong /></Link>
+                    <Link className='GetQuote nav-link col-6 col-md-3 mt-3 rounded-5 py-2 px-3 ' to="Contactus"> Get A Quote <FaArrowRightLong /></Link>
                   </div>
 
                   <div className="section5 col-11">
                     <ul className='d-flex flex-column gap-4'>
                       <h2>Get in touch</h2>
                       <li><MdOutlineMail className="icon2 me-3" /> Infolaborc@gmail.com</li>
-                      <li className='col-md-7 col-lg-7 d-flex'><PiMapPinLine className="icon3 me-3" /><span className='text-start ms-2 '>123 Innovation Drive,
+                      <li className='col-md-7 col-lg-7 d-flex'><GrLocation className="icon3 me-3" /><span className='text-start ms-2 '>123 Innovation Drive,
                         Tech City, ST 12345, USA</span></li>
                       <li><MdOutlinePhone className="icon2 me-3" />123-456-7890</li>
                     </ul>

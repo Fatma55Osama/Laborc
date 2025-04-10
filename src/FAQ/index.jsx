@@ -43,9 +43,9 @@ export default function FAQ() {
               questions.map((el,index)=>{
                 return(
                   
-                  <Accordion key={el.documentId} >
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>{`${index+1}. ${el.Qustion}`}</Accordion.Header>
+                  <Accordion key={el.documentId} className='accordionfaq' >
+                  <Accordion.Item eventKey="0" className='accordion-itemfaq '>
+                    <Accordion.Header className='accordion-buttonfaq'>{`${index+1}. ${el.Qustion}`}</Accordion.Header>
                     <Accordion.Body className={styles.answer}>
                          {el.anwer}
                     </Accordion.Body>

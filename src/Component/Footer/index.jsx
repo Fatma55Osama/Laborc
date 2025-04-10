@@ -10,6 +10,7 @@ import logo from '../../assets/footer-logo1.png'
 import { MdOutlineMail } from "react-icons/md";
 import { PiMapPinLine } from "react-icons/pi";
 import { MdOutlinePhone } from "react-icons/md";
+import { GrLocation } from "react-icons/gr";
 export default function Footer() {
   return (
     <div className='col-12 parer'>
@@ -61,7 +62,7 @@ export default function Footer() {
             <ul className='d-flex flex-column gap-4'>
               <h2>Get in touch</h2>
               <li><MdOutlineMail className={styles.icon2+ " me-3"}/> Infolaborc@gmail.com</li>
-              <li className='col-md-7 col-lg-7 d-flex'><PiMapPinLine className={styles.icon3+ " me-3"}/><span className='text-start ms-2 '>123 Innovation Drive,
+              <li className='col-md-7 col-lg-7 d-flex'><GrLocation  className={styles.icon3+ " me-3"}/><span className='text-start ms-2 '>123 Innovation Drive,
                           Tech City, ST 12345, USA</span></li>
               <li><MdOutlinePhone className={styles.icon2 + " me-3"}/>123-456-7890</li>
             </ul>

@@ -56,4 +56,19 @@ h5{
     color: #6a6a6a;
 }
 
-
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  #blogcategorydiv > div{
+     display: flex !important;
+     justify-content: center !important;
+  }
+  
+}
+@media screen and (max-width: 767px) {
+  #blogcategorydiv > div{
+    display: flex !important;
+    justify-content: center !important;
+ }
+  .divcard > div{
+    width: 24rem !important;
+  }
+}

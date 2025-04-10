@@ -23,7 +23,7 @@ export default function Servicepage() {
             <h1>Services</h1>
             <div className='  col-8  d-flex flex-column justify-content-center gap-2' >
               <div className='d-flex  flex-row align-items-center gap-1'>
-                <Link className='nav-link'>Home</Link>
+                <Link to={"/"} className='nav-link'>Home</Link>
                 <FaAngleRight />
                 <Link className='nav-link'>Services</Link>
               </div>

@@ -51,18 +51,25 @@
     transform: translatex(25px) translateY(60px) !important;
 
   }
-  #heightText{
+  /* #heightText{
     height: 200px !important;
-  }
+  } */
   #carddetail{
-    width: 480px;
+    width: 380px;
   }
   #contentcard {
-    width: 400px !important;
-    height: 500px !important; 
+    width: 350px !important;
+    height: 450px !important; 
     img{
-      width:370px; 
-      height:250px;
+      width:350px; 
+      height:230px;
+    }
+    h3{
+      font-size: 23px !important;
+    }
+    p{
+      font-size: 13px !important;
+      margin: 0 !important;
     }
   }
 }
