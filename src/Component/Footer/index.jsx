@@ -22,7 +22,7 @@ export default function Footer() {
           </div>
           <div className={styles.part2 + ' col-lg-6  d-flex align-items-center justify-content-end'}>
             <Link to={"/Contactus"} className={styles.btn1 + ' btn rounded-5 py-3 px-4 py-md-3 px-md-4 me-4' }>Contact Us Now<RiArrowRightUpLine className={styles["black-icon"]} /></Link>
-            <Link to={"/research"} className={styles.btn2 + ' btn rounded-5 py-3 px-4 py-md-3 px-md-4'}>Meet Lab Expert<RiArrowRightUpLine className={styles["white-icon"]} /></Link>
+            <Link to={"/team"} className={styles.btn2 + ' btn rounded-5 py-3 px-4 py-md-3 px-md-4'}> Lab Expert<RiArrowRightUpLine className={styles["white-icon"]} /></Link>
           </div>
         </div>
       </div>

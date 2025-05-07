@@ -7,14 +7,14 @@ import { useRecoilValue } from 'recoil'
 import { $domain, useData } from '../Store'
 import { indexservice } from '../Api/indexservice'
 export default function Servicepage() {
-  const { dataservice, setService } = useData()
+  const { dataservice } = useData()
   const domain = useRecoilValue($domain)
-  useEffect(()=>{
-    indexservice(domain).then((res)=> {
-      setService(res)
-      console.log(res)
-    })
-  },[])
+  // useEffect(()=>{
+  //   indexservice(domain).then((res)=> {
+  //     setService(res)
+  //     console.log(res)
+  //   })
+  // },[])
   return (
     <div className={styles.parentdiv + ' col-12 d-flex flex-column'}>
       <div className='col-12 d-flex justify-content-center' id={styles.berveiw}>

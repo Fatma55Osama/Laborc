@@ -26,7 +26,7 @@ import SwiperSearch from '../Component/SwiperSearch'
 import Header from '../Component/Header'
 import Footer from '../Component/Footer'
 import { useRecoilState } from 'recoil'
-import { $blocks, $isplay } from '../Store'
+import { $blocks, $isplay, useResearch } from '../Store'
 import Video from '../Component/Video'
 import ShowPartBlogs from '../Component/ShowPartBlogs'
 import ShowPartTeams from '../Component/ShowPartTeams'
@@ -34,6 +34,7 @@ export default function Homepage() {
   const [isplaying, setIsplaying] = useRecoilState($isplay)
   const [blocks, setBlocks] = useRecoilState($blocks)
   const [modal, setModal] = useState(false)
+  const { research } = useResearch()
   return (
     <div className='parentdiv col-12'>
       <div className='col-12 bg-img'>
@@ -83,7 +84,7 @@ export default function Homepage() {
 
                     <div className='col-lg-10 ms-2 ms-lg-0 ms-md-4 divbtn mt-lg-5 mt-md-3 '>
                       <Link className='btn1-link btn1 py-3 px-3 py-lg-3 py-md-3 px-md-3 px-lg-3 rounded-5 ' to={"/Contactus"}>Book A Lab Visit</Link>
-                      <Link className='btn2-link btn2  py-3 px-3 py-lg-3 py-md-3 px-md-3 px-lg-3 rounded-5 ms-4' to={"/research"}>Tests & Services</Link>
+                      <Link className='btn2-link btn2  py-3 px-3 py-lg-3 py-md-3 px-md-3 px-lg-3 rounded-5 ms-4' to={"/service"}>Tests & Services</Link>
                     </div>
                   </div>
                 </div>
@@ -190,13 +191,13 @@ export default function Homepage() {
         </div>
 
       </div> */}
-     <ShowPartBlogs blogsCount={4}/>
+      <ShowPartBlogs blogsCount={4} />
       <div className='col-12 div4  d-flex '>
         <div className='container  circlediv  d-flex flex-column justify-content-center align-items-center flex-grow-1 py-5 '>
 
           <div className='  unit1 pb-2 d-flex justify-content-around align-items-center mb-2'>
             <img src={logo2} width={25} alt="" />
-            <span className='mt-1  fs-4' >Solutions</span>
+            <span className='mt-1  fs-4' >Research</span>
           </div>
 
           <div className=' col-lg-7 col-md-9 text-center mb-lg-5 '>
@@ -205,64 +206,109 @@ export default function Homepage() {
           </div>
 
           <div className=' circl1  d-flex align-items-center justify-content-center'>
-          
-          </div>  
-          <div className=' circl2  d-flex justify-content-center align-items-center'>
-              <div className='circl3 '></div>
 
-            </div>
-          <div className='col-12 bigdiv mt-lg-5 d-flex  align-items-center h-100'>
-            <div className='col-12 col-lg-6 col-md-6 right_part1  h-75 d-flex flex-column  justify-content-between '>
-
-              <div className=' section1 col-lg-8 col-md-10 d-flex text-end justify-content-around align-items-center'>
-                <h3>Chemical<br />
-                  Composition Analysis</h3>
-                <div className='bluedivcircle d-flex justify-content-center align-items-center'>
-                  <img src={solution1} width={50} alt="" />
-                </div>
-              </div>
-              <div className='col-lg-6 col-md-12  section2 d-flex text-end  justify-content-around align-items-center'>
-                <h3>Trace Element<br />
-                  Detection</h3>
-                <div className='blackdivcircle d-flex justify-content-center align-items-center'>
-                  <img src={solution2} width={50} alt="" />
-                </div>
-              </div>
-
-              <div className='col-lg-8 col-md-12 section3 text-end d-flex justify-content-around align-items-center '>
-                <h3>Corrosion And<br />
-                  Degradation Analysis
-                </h3>
-                <div className='bluedivcircle d-flex justify-content-center align-items-center'>
-                  <img src={solution3} width={50} alt="" />
-                </div>
-              </div>
-            </div>
-            <div className='col-12 col-lg-6 col-md-6 left_part2  h-75 d-flex flex-column align-items-center justify-content-between '>
-              <div className='col-lg-7  section4   d-flex  justify-content-around align-items-center ' >
-                <div className='blackdivcircle d-flex justify-content-center align-items-center'>
-                  <img src={solution4} width={50} alt="" />
-                </div>
-                <h3>Material<br />
-                  Characterization</h3>
-              </div>
-              <div className='col-lg-8 col-md-11 section5  d-flex align-items-center justify-content-between gap-lg-3'>
-                <div className='bluedivcircle col-6 d-flex justify-content-center align-items-center'>
-                  <img src={solution5} width={50} alt="" />
-                </div>
-                <h3>
-                  Mertrological
-                  Calibration</h3>
-              </div>
-              <div className='col-lg-8 col-md-11 section6 y d-flex justify-content-between align-items-center gap-lg-3'>
-                <div className='blackdivcircle col-6 d-flex justify-content-center align-items-center'>
-                  <img src={solution6} width={50} alt="" />
-                </div>
-                <h3>Custom Testing
-                  Solutions</h3>
-              </div>
-            </div>
           </div>
+          <div className=' circl2  d-flex justify-content-center align-items-center'>
+            <div className='circl3 '></div>
+
+          </div>
+            <div  className='col-12 bigdiv mt-lg-5 d-flex align-items-center h-100'>
+
+              <div className='col-12 col-lg-6 col-md-6 right_part1 h-75 d-flex flex-column justify-content-between'>
+
+                <div className='section1 col-lg-8 col-md-10 d-flex text-end justify-content-around align-items-center'>
+                  {research.map((el,index)=>{
+                    if(index==0){
+                      return(
+                        <Link to={`/Deatailesresearch/${el.documentId}`} className='nav-link'> <h3 className='ms-lg-5'>{el.title}</h3></Link>
+                      )
+                    }
+                    return null
+                  })}
+                 
+                  <div className='bluedivcircle d-flex justify-content-center align-items-center'>
+                    <img src={solution1} width={50} alt="" />
+                  </div>
+                </div>
+
+                <div className='col-lg-8  col-md-12 section2 d-flex text-end justify-content-around align-items-center'>
+                {research.map((el,index)=>{
+                    if(index==1){
+                      return(
+                        <Link to={`/Deatailesresearch/${el.documentId}`} className='nav-link'> <h3 >{el.title}</h3></Link>
+                      )
+                    }
+                    return null
+                  })}
+                  <div className='blackdivcircle d-flex justify-content-center align-items-center'>
+                    <img src={solution2} width={50} alt="" />
+                  </div>
+                </div>
+
+                <div className='col-lg-8 col-md-12 section3 text-end d-flex justify-content-around align-items-center '>
+                {research.map((el,index)=>{
+                    if(index==2){
+                      return(
+                        <Link to={`/Deatailesresearch/${el.documentId}`} className='nav-link'> <h3 className='ms-lg-5'>{el.title}</h3></Link>
+
+                      )
+                    }
+                    return null
+                  })}
+                  <div className='bluedivcircle d-flex justify-content-center align-items-center'>
+                    <img src={solution3} width={50} alt="" />
+                  </div>
+                </div>
+
+              </div>
+
+              <div className='col-12 col-lg-6 col-md-6 left_part2 h-75 d-flex flex-column align-items-center justify-content-between'>
+
+                <div className='col-lg-7 section4 d-flex justify-content-around align-items-center'>
+                  <div className='blackdivcircle d-flex justify-content-center align-items-center'>
+                    <img src={solution4} width={50} alt="" />
+                  </div>
+                  {research.map((el,index)=>{
+                    if(index==3){
+                      return(
+                      <Link to={`/Deatailesresearch/${el.documentId}`} className='nav-link'>  <h3 className='ms-lg-3'>{el.title}</h3> </Link> 
+                      )
+                    }
+                    return null
+                  })}
+                </div>
+
+                <div className='col-lg-8 col-md-11 section5 d-flex align-items-center justify-content-between gap-lg-3'>
+                  <div className='bluedivcircle col-6 d-flex justify-content-center align-items-center'>
+                    <img src={solution5} width={50} alt="" />
+                  </div>
+                  {research.map((el,index)=>{
+                    if(index==4){
+                      return(
+                        <Link to={`/Deatailesresearch/${el.documentId}`} className='nav-link'> <h3>{el.title}</h3></Link>
+                      )
+                    }
+                    return null
+                  })}
+                </div>
+
+                <div className='col-lg-8 col-md-11 section6 y d-flex justify-content-between align-items-center gap-lg-3'>
+                  <div className='blackdivcircle col-6 d-flex justify-content-center align-items-center'>
+                    <img src={solution6} width={50} alt="" />
+                  </div>
+                  {research.map((el,index)=>{
+                    if(index==5){
+                      return(
+                        <Link to={`/Deatailesresearch/${el.documentId}`} className='nav-link'> <h3 className='me-lg-5'>{el.title}</h3></Link>
+                      )
+                    }
+                    return null
+                  })}
+                </div>
+
+              </div>
+            </div>
+     
         </div>
       </div>
       {/* <div className='div5 col-12  d-flex justify-content-center'>
@@ -307,30 +353,30 @@ export default function Homepage() {
           </div>
         </div>
       </div> */}
-      <Video/>
+      <Video />
 
       <div className='div6 col-12 d-flex justify-content-center '>
         <div className='col-10  d-flex flex-column gap-5 '>
           <div className='col-12  divlogohead d-flex flex-column gap-3'>
-          <div className='col-12 d-flex flex-row  align-items-center gap-2'>
-            <img src={logo2} width={35} alt="" />
-            <span className='fs-4'> Laborc Service</span>
-          </div>
-          <div className='col-12 text_btn d-flex justify-content-between align-items-center' >
-            <div className='col-lg-7'>
-               <h1>Laboratory Solutions Tailored
-                  <br/> to Your Research Needs</h1> 
+            <div className='col-12 d-flex flex-row  align-items-center gap-2'>
+              <img src={logo2} width={35} alt="" />
+              <span className='fs-4'> Laborc Service</span>
             </div>
-           
-           <Link className='nav-link rounded-5 py-3 px-3'  to={"/research"}>View All Services</Link>
-          </div>
+            <div className='col-12 text_btn d-flex justify-content-between align-items-center' >
+              <div className='col-lg-7'>
+                <h1>Laboratory Solutions Tailored
+                  <br /> to Your Research Needs</h1>
+              </div>
+
+              <Link className='nav-link rounded-5 py-3 px-3' to={"/research"}>View All Services</Link>
+            </div>
           </div>
 
-        <SwiperSearch/>
-      </div>
+          <SwiperSearch />
+        </div>
 
       </div>
-      <ShowPartTeams/>
+      <ShowPartTeams />
 
     </div>
   )

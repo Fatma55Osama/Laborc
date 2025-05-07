@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './index.module.css'
 import Header from '../Component/Header'
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { $active, $domain } from '../Store'
+import { $active, $domain, useResearch } from '../Store'
 import { FaAngleRight } from 'react-icons/fa6'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -15,10 +15,9 @@ import { getcategory } from '../Api/GetCategory'
 import SectionVideo2 from '../Component/SectionVideo2'
 
 export default function Research() {
-  const [categoryreaserch, setCategoryreaserch] = useState([])
-  const [active, setActive] = useRecoilState($active)
+  // const [categoryreaserch, setCategoryreaserch] = useState([])
+  const {research} = useResearch()
   const domain = useRecoilValue($domain)
-  const breadcrumbsitems = [{ text: "Home", url: "/" }, { text: "Our Research", url: "/research" }]
   // useEffect(() => {
   //   axios.get(`${domain}/api/categories`, {
   //     params: {
@@ -31,11 +30,11 @@ export default function Research() {
   //     console.log(err)
   //   })
   // }, [])
-  useEffect(()=>{
-    getcategory(domain).then((res)=>{
-      setCategoryreaserch(res)
-    })
-  },[domain])
+  // useEffect(()=>{
+  //   getcategory(domain).then((res)=>{
+  //     setCategoryreaserch(res)
+  //   })
+  // },[domain])
   return (
     <div className={styles.maindiv + " col-12"}>
       <div className={styles.section1 + " h-100 d-flex flex-column"}>
@@ -49,7 +48,7 @@ export default function Research() {
         <div className='container  d-flex justify-content-center align-items-center'>
           <div className={styles.carddiv + " col-12 d-flex flex-row flex-wrap justify-content-center gap-4"}>
             {
-              categoryreaserch.map((el, index) => {
+              research.map((el, index) => {
                   console.log(el) ;
                   console.log(el.imge_category); 
                   console.log(domain + el.imge_category?.url);

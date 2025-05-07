@@ -2,6 +2,8 @@
     /* min-height: 780px !important;
     min-height: 90%; */
     /* background-color: antiquewhite; */
+    min-height: 100vh;
+    max-height: 90%;
     #sectionimg{
         background-color: #f2f4f8;
 
@@ -19,8 +21,8 @@
     }
     .teamdoctor{
         border: #0066ff;
-        min-width: 700px;
-        max-width: 90%;
+        /* min-width: 700px;
+        max-width: 90%; */
         min-height: 560px;
         max-height: 90%;
         img{
@@ -28,4 +30,10 @@
             height: 100%;
         }
     }
+}
+@media screen and (max-width:1024px) and (min-width:768px) {
+    
+    .teamdoctor{
+    min-height: 200px !important;
+        max-height: 0%;}
 }

@@ -3,6 +3,8 @@ import reaserch from '../assets/solution-bottom-icon1.svg'
 import flower from '../assets/solution-bottom-icon2.svg'
 import books from '../assets/solution-bottom-icon3.svg'
 import { create } from "zustand";
+import { PiTicketFill } from "react-icons/pi";
+import { CgProfile } from "react-icons/cg";
 export const $active = atom({
     key:" $active",
     default:"Home"
@@ -29,6 +31,8 @@ export const useData = create((set)=>({
     dataTeams:[],
     DetailsBlog:{},
     dataservice:[],
+    detailsServie:{},
+    setDetailServices:(value)=>set(()=>({detailsServie:value})),
     setDataBlog:(blogs)=>set(()=>({dataBlog:blogs})),
     setTeams:(teams)=>(set(()=>({dataTeams:teams}))),
     setDetalisblogs:(singlblog)=>(set(()=>({DetailsBlog:singlblog}))),
@@ -44,4 +48,24 @@ export const usepagination = create((set)=>({
     setTotalPages:(value)=>(set(()=>({totalPages:value}))),
     blogsperpage:3,
     setblogsperpage:(value)=>(set(()=>({blogsperpage:value})))
+}))
+
+export const useResearch =create((set)=>({
+    research:[],
+    setresearch:(resea)=>(set(()=>({research:resea}))),
+    Detailsreaserch:{},
+    setDetailsreaserch:(value)=>(set(()=>({Detailsreaserch:value}))),
+
+}))
+export const useLoading =create((set)=>({
+    loaderindex:true,
+    setLoderindex:(value)=>(set(()=>({loaderindex:value})))
+}))
+export const usepathDash =create((set)=>({
+    pathdash:[
+        {name:"Booking", path:'/Dashboard/rebooking' ,icon:PiTicketFill},
+        {name:"Profile", path:'/Dashboard/Profile' ,icon:CgProfile},
+
+    ],
+    setPath:(value)=>(set(()=>({pathdash:value})))
 }))

@@ -8,8 +8,8 @@ export default function Register() {
   return (
     <div className={styles.register + " d-flex"}>
       <div className='col-12 d-flex flex-grow-1  '>
-        <div className=' col-6 d-flex flex-column justify-content-center align-items-center gap-5' id={styles.sectionimg}>
-          <div className='mt-5'>
+        <div className=' col-md-6  d-none  d-md-flex flex-md-column justify-content-md-center align-items-md-center ' id={styles.sectionimg}>
+          <div className='mt-lg-5' id={styles.logodiv}>
             <img src={logo} alt="" />
           </div>
           <div className={styles.teamdoctor}>
@@ -17,13 +17,13 @@ export default function Register() {
           </div>
 
         </div>
-        <div className='col-6 d-flex  align-items-center' id={styles.sectiondata}>
-          <div className='container col-9 d-flex flex-column gap-2 '>
-            <div>
+        <div className='col-12 col-md-6 d-flex  align-items-center' id={styles.sectiondata}>
+          <div className='container col-lg-9 d-flex flex-column justify-content-center align-items-baseline gap-2'>
+            {/* <div className='bg-danger  d-flex flex-column align-items-start'>
                <h3>Sign Up</h3>
             <span>Enter details to create your account</span>
-            </div>
-           
+            </div> */}
+ 
             <div className='col-12'>
               <FormRegister/>
             </div>

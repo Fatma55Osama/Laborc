@@ -1,0 +1,23 @@
+#sidebar{
+    min-height: 100vh;
+    max-height: 90%;
+    width:150px;
+    Link{
+        font-size: 20px;
+    }
+    #icon{
+        font-size: 22px;
+        
+    }
+    button{
+        outline: none;
+        border: none;
+        background-color: white;
+    }
+    #profile{
+        font-size: 35px;
+    }
+    .active{
+        color: #396cf0;
+    }
+}

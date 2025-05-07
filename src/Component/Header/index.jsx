@@ -13,10 +13,13 @@ import { useRecoilState } from 'recoil'
 import { $active } from '../../Store'
 import { Accordion } from 'react-bootstrap'
 import { GrLocation } from 'react-icons/gr'
+import Loader from '../Loader'
 export default function Header() {
   const [modal, setModal] = useState(false)
   const [active, setActive] = useRecoilState($active)
+
   return (
+   
     <div className='col-12 '>
       {/*Start nav */}
       <div className='col-12  navpar  py-lg-3   d-flex justify-content-center  align-items-center'>
@@ -117,6 +120,6 @@ export default function Header() {
         </div>
       </div>
       {/* end nav */}
-    </div>
-  )
+    </div>)
+    
 }

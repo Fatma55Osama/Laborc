@@ -24,6 +24,7 @@
   min-height: 800px;
   max-height: 90%;
   .part1 {
+    margin-top: 100px;
     color: #10002b;
     .divhr {
       border-bottom: 1px solid #d9d9d9;
@@ -81,10 +82,27 @@
       padding: 15px;
       border: 1px solid #eaebeb;
     }
+    #analysisImg{
+      width: 60%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border: 1px solid #eaebeb;
+      border-radius: 8px;
+      cursor: pointer;
+      color:#6c757d;
+      transition: all 0.3s ease;
+      min-height: 100px;
+    }
+
+  
     textarea{
       border: 1px solid #eaebeb;
       padding: 15px;
       min-height: 150px;
+      outline: none;
     }
     .send{
       background-color: #4a43dd;
@@ -103,7 +121,7 @@
     display: flex !important;
     flex-direction: column !important;
     .part1{
-      margin-top: 50px;
+      margin-top: 50px !important;
       width: 100%;
        order: 1;
        .divhr{

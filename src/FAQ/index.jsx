@@ -33,12 +33,12 @@ export default function FAQ() {
       </div>
       <div className={styles.divquestion + ' col-12'}>
         <div className='container d-flex flex-column justify-content-center align-items-center gap-4 mt-5 '>
-          <div className={styles.shapAnimate + " bg-success"}></div>
+          <div className={styles.shapAnimate + " "}></div>
           <div className={styles.section1 + " d-flex flex-column align-items-center gap-4"}>
             <button className='py-1 px-3 d-flex align-items-center justify-content-center'>General FAQ’s</button>
             <h3>Frequently Asked Questions</h3>
           </div>
-          <div className=' col-10 d-flex flex-column justify-content-center align-items-center'>
+          <div className=' col-12 col-md-10 d-flex flex-column justify-content-center align-items-center'>
             {
               questions.map((el,index)=>{
                 return(
