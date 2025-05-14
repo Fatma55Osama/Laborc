@@ -22,8 +22,9 @@ export default function ShowPartTeams() {
         </div>
         <div className='d-flex flex-wrap justify-content-between ' id={styles.expertallteam}>
           {
-            dataTeams.slice(0, 4).map((el) => (
-              <div key={el.documentId} className=' d-flex flex-column gap-3 ' id={styles.memeberteam}>
+            dataTeams.slice(0, 4).map((el,index) => (
+              <div key={el.documentId} className=' d-flex flex-column gap-3 ' data-aos="fade-up"
+              data-aos-offset="10" data-aos-delay={`${index * 350}`} id={styles.memeberteam}>
                 <img src={domain + el.img_doctor.url} alt="" />
                 <div className={styles.inform + " text-center"}>
                  <Link to={`/teamdetails/${el.documentId}`} className='nav-link'> <h3>{el.name_doctor}</h3></Link>

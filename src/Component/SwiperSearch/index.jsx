@@ -32,10 +32,10 @@ export default function SwiperSearch() {
                             dynamicBullets: true,
                         }}
                         autoplay={{
-                            delay: 5000, // تشغيل تلقائي كل 2 ثانية
-                            disableOnInteraction: false, // يستمر بعد تدخل المستخدم
+                            delay: 5000, 
+                            disableOnInteraction: false, 
                         }}
-                        loop={true} // يكرر السلايدر بشكل دائري
+                        loop={true} 
                         modules={[Pagination, Autoplay]}
                         className="mySwiper"
                         breakpoints={{
@@ -43,14 +43,14 @@ export default function SwiperSearch() {
                                 slidesPerView: 1,
                             },
                             576: {
-                                slidesPerView: 1, // صورتين عند الشاشات الصغيرة (موبايل)
+                                slidesPerView: 1, 
                             },
                             768: {
-                                slidesPerView: 2, // ثلاث صور عند التابلت
+                                slidesPerView: 2, 
                             },
                             1440: {
                                 spaceBetween: 30,
-                                slidesPerView: 4, // أربع صور عند الشاشات الكبيرة
+                                slidesPerView: 4, 
                             }
                         }}
                     >

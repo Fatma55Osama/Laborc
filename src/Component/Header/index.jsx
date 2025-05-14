@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './index.scss'
 import logo from '../../assets/header-logo2.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBarsStaggered, faL } from '@fortawesome/free-solid-svg-icons'
 import logoblue from '../../assets/footer-logo1.png'
@@ -10,26 +10,39 @@ import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md'
 import { PiMapPinLine } from 'react-icons/pi'
 import { IoLogoInstagram } from 'react-icons/io5'
 import { useRecoilState } from 'recoil'
-import { $active } from '../../Store'
+import {  useModale } from '../../Store'
 import { Accordion } from 'react-bootstrap'
 import { GrLocation } from 'react-icons/gr'
+import { IoMdNotifications } from "react-icons/io";
 import Loader from '../Loader'
+import Notafication from '../Notafication'
 export default function Header() {
   const [modal, setModal] = useState(false)
-  const [active, setActive] = useRecoilState($active)
+  const { modalindex, openModal, closeModal } = useModale()
+  const location = useLocation()
 
   return (
-   
+
     <div className='col-12 '>
       {/*Start nav */}
       <div className='col-12  navpar  py-lg-3   d-flex justify-content-center  align-items-center'>
-        <div className='nav_rounded col-12 col-lg-10 col-md-12  bg-white py-lg-3 d-flex justify-content-between px-lg-5 align-items-center '>
+        <div className='nav_rounded col-12 col-lg-10 col-md-12  bg-white py-lg-2 d-flex justify-content-between px-lg-5 align-items-center '>
           <img className='me-5 me-md-5 me-lg-5 d-none d-md-none d-lg-flex ' src={logo} width="135px" height="35px" alt="" />
           <img className='d-flex d-md-flex d-lg-none' src={logoblue} width={120} alt="" />
-          <div className='border_icon d-flex d-md-flex d-lg-none' onClick={() => setModal(true)}>
+          <div className=' d-flex gap-5'>
+            <div className='d-flex d-md-flex d-lg-none '>
+              <Link className='nav-link fs-3 ' onClick={() => openModal(true)}><IoMdNotifications /></Link>
 
-            <FontAwesomeIcon icon={faBarsStaggered} className='icon_fontAwesome ' />
+            </div>
+            <div className='border_icon d-flex d-md-flex d-lg-none ' onClick={() => setModal(true)}>
+
+              <FontAwesomeIcon icon={faBarsStaggered} className='icon_fontAwesome ' />
+            </div>
           </div>
+
+          {
+            modalindex && (<Notafication />)
+          }
           {
             modal && (
               <div className='modal col-12 d-flex justify-content-center align-items-center ' >
@@ -47,7 +60,8 @@ export default function Header() {
                       <Link className='nav-link' to="/about">About Us</Link>
                       <Link className='nav-link' to="/research">Research</Link>
                       <Link className='nav-link' to="/service">Services</Link>
-                      <Accordion  className='col-12 accordionn'>
+                      <Link className='nav-link' to="/registeruser">Register</Link>
+                      <Accordion className='col-12 accordionn'>
                         <Accordion.Item eventKey="0" className='accordion-itemm'>
                           <Accordion.Header className='accordion-buttonn'>Pages</Accordion.Header>
                           <Accordion.Body>
@@ -98,8 +112,10 @@ export default function Header() {
 
             )
           }
-          <div className='col-lg-6  navpar_white  '>
+          <div className='col-lg-7  navpar_white  '>
+            
             <ul className='d-flex justify-content-between align-items-center align-content-center mt-2'>
+             
               <Link className='nav-link' to="/">Home</Link>
               <Link className='nav-link' to="/about">About Us</Link>
               <Link className='nav-link' to="/research">Research</Link>
@@ -112,14 +128,20 @@ export default function Header() {
                 </ul>
               </span>
               <Link className='nav-link' to={"/blog"}>Blog </Link>
+              <Link className='nav-link' to="/registeruser">Register</Link>
 
               <Link className='nav-link' to="/Contactus">Contact </Link>
+              <Link className='nav-link fs-3' onClick={() => openModal(true)}><IoMdNotifications /></Link>
+              {
+                modalindex && (<Notafication />)
+              }
             </ul>
 
           </div>
+
         </div>
       </div>
       {/* end nav */}
     </div>)
-    
+
 }

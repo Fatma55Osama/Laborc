@@ -6,7 +6,8 @@ import { GoArrowUpRight } from "react-icons/go"
 
 export default function Cardservice(props) {
     return (
-        <div className=' col-12 container' id={styles.carddetail}>
+        <div className=' col-12 container' id={styles.carddetail}   data-aos="fade-up"
+        data-aos-offset="5" data-aos-delay={`${props.index * 290}`} >
             <div className='col-12 container bg-white py-4 d-flex flex-column gap-1 gap-md-3' id={styles.contentcard}>
                 <div className='d-flex justify-content-center'>
                     <img className='' src={props.img} width={415} height={301} alt="" />

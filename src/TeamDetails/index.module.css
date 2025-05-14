@@ -84,6 +84,11 @@
   }
 }
 @media screen and (max-width:767px) {
+  .bgimg{
+    h1{
+      font-size: 40px !important;
+    }
+  }
   .part1{
     display: flex;
     flex-direction: column;

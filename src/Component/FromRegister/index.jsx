@@ -14,7 +14,7 @@ import { collection, doc, getDocs, query, setDoc, where } from 'firebase/firesto
 import Swal from 'sweetalert2';
 export default function FormRegister() {
   // const auth = getAuth();
-  const navigate =useNavigate()
+  const navigate = useNavigate()
   const validationSchema = Yup.object({
     userName: Yup.string().min(2, "Too Short!").max(50, "Too Long!").matches(
       /^[a-zA-Z]{2}[a-zA-Z\s]{1,48}$/,
@@ -30,34 +30,52 @@ export default function FormRegister() {
     userAddress: Yup.string().required('Address is required'),
     userRole: Yup.string().oneOf(['admin', 'superAdmin'], 'Please select a valid role').required('Role is required'),
   })
-  // const [userRole, setUserRole] = useState(''); 
-    const checksuper = async(user_id)=>{
-      const q = query(collection(db, "userAdmin"), where("user_id", "==", user_id));
-      const querySnapshot = await getDocs(q);
-      if (querySnapshot.docs.length > 0) {
-        return "superAdmin"; 
-      }
-      return "admin"; 
-    };
-    useEffect(() => {
-      const user_id = sessionStorage.getItem("user_id:") || localStorage.getItem("user_id:");
-      const token = sessionStorage.getItem("Token") || localStorage.getItem("Token");
-    
-      if (user_id && token) {
-        checksuper(user_id).then(role => {
-          navigate(role === "superAdmin" ? "/registerAdmin" : "/loginAdmin");
-        }).catch(() => {
-          // navigate("/loginAdmin");
-        });
-      }
-    }, []);
+  const checksuper = async (user_id) => {
+    const q = query(collection(db, "userAdmin"), where("user_id", "==", user_id));
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.docs.length > 0) {
+      return "superAdmin";
+    }
+    return "admin";
+  };
+  useEffect(() => {
+    const user_id = sessionStorage.getItem("user_id:") || localStorage.getItem("user_id:");
+    const token = sessionStorage.getItem("Token") || localStorage.getItem("Token");
+
+    if (user_id && token) {
+      checksuper(user_id).then(role => {
+        if (role !== "superAdmin") {
+          Swal.fire({
+            title: 'Access Denied!',
+            text: 'Only superAdmin can access this page.',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+          }).then(() => {
+            navigate("/loginAdmin");
+          });
+        } else {
+          navigate("/registerAdmin");
+        }
+      }).catch(() => {
+        navigate("/loginAdmin");
+      });
+    } else {
+      Swal.fire({
+        title: 'Access Denied!',
+        text: 'Only superAdmin can access this page.',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        navigate("/loginAdmin");
+      });
+    }
+  }, []);
   const handleRegister = async (values) => {
     const selectedRole = values.userRole
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, values.userEmail, values.userPassword);
       const user = userCredential.user;
 
-      // بناءً على الدور المختار (سوبر أدمن أو أدمن)، اختر المكان الذي سيتم تخزين بيانات المستخدم فيه
       const userCollection = selectedRole === 'superAdmin' ? 'userAdmin' : 'auth';
 
       await setDoc(doc(db, userCollection, user.uid), {
@@ -65,12 +83,13 @@ export default function FormRegister() {
         userEmail: values.userEmail,
         userPhone: values.userPhone,
         userAddress: values.userAddress,
-        userRole:selectedRole,
+        userRole: selectedRole,
+        user_id: user.uid,
         createdAt: new Date()
       });
 
       sessionStorage.setItem("Token", user?.accessToken) || localStorage.setItem("Token", user?.accessToken);
-      sessionStorage.setItem("user_id:", user?.uid) || localStorage.setItem("user_id:", user?.uid) 
+      sessionStorage.setItem("user_id:", user?.uid) || localStorage.setItem("user_id:", user?.uid)
       sessionStorage.setItem("role", selectedRole) || localStorage.setItem("role", selectedRole);
 
       Swal.fire({
@@ -80,12 +99,13 @@ export default function FormRegister() {
         confirmButtonText: 'OK'
       });
 
-      // التوجيه إلى صفحة أخرى بناءً على الدور
+
       if (selectedRole === 'superAdmin') {
         navigate("/registerAdmin");
       } else {
         navigate("/loginadmin");
-      }} catch (error) {
+      }
+    } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         Swal.fire({
           title: 'Registration Failed!',
@@ -104,14 +124,14 @@ export default function FormRegister() {
   // const app = initializeApp(firebaseConfig);
   return (
     <div className='col-12'>
-      <Formik validationSchema={validationSchema} initialValues={{ userName: "", userEmail: "", userPassword: "", userPhone: "", userAddress: "",userRole:"" }} onSubmit={handleRegister}>
+      <Formik validationSchema={validationSchema} initialValues={{ userName: "", userEmail: "", userPassword: "", userPhone: "", userAddress: "", userRole: "" }} onSubmit={handleRegister}>
         {({ errors, touched }) => (
           <Form className='d-flex flex-column justify-content-center align-items-center  gap-2 gap-lg-3 '>
             <div className=' d-flex d-md-none' id={styles.logodiv}>
-              <img src={logo}  alt="" />
+              <img src={logo} alt="" />
             </div>
             <div className=' col-md-10 px-md-3  pe-5 pe-md-0'>
-              <h3>Sign Up Admin</h3> 
+              <h3>Sign Up Admin</h3>
               <span>Enter details to create your account</span>
             </div>
             <div className={styles.inputGroup + ' position-relative  '}>
@@ -147,12 +167,12 @@ export default function FormRegister() {
               <label>Choose Role:</label>
               <div className="form-check ">
                 <label className="form-check-label">Admin
-                <Field type="radio" name="userRole" value="admin" className="form-check-input"/>
+                  <Field type="radio" name="userRole" value="admin" className="form-check-input" />
                 </label>
               </div>
               <div className="form-check">
                 <label className="form-check-label">Super Admin
-                <Field type="radio" name="userRole" value="superAdmin" className="form-check-input"  />
+                  <Field type="radio" name="userRole" value="superAdmin" className="form-check-input" />
                 </label>
               </div>
             </div>

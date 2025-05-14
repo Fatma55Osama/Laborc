@@ -58,7 +58,7 @@ export default function Formikuserlogin() {
               <div className=' d-flex d-md-none' id={styles.logodiv}>
                 <img src={logo} alt="" />
               </div>
-              <div className='col-lg-10 col-md-12 col-11  px-lg-3 pe-5  d-flex flex-column gap-lg-1'>
+              <div className='col-lg-10 col-md-12 col-12  px-lg-3 pe-5  d-flex flex-column gap-lg-1'>
                 <h3>Welcome to Laborc</h3>
                 <p className='m-0 ms-1 mt-1'>Need an account?<Link to={"/registeruser"} className='text-decoration-none '>Sign Up</Link> </p>
               </div>
@@ -79,7 +79,7 @@ export default function Formikuserlogin() {
                   <Field type="checkbox" name="userremember" />
                   Remember me
                 </label>
-                <Link className='nav-link'>Forget Password?</Link>
+                {/* <Link className='nav-link'>Forget Password?</Link> */}
               </div>
 
 

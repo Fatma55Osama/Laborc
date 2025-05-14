@@ -52,28 +52,28 @@ export default function DeatailsService() {
                     <p>{detailsServie.details_servic?.p2}</p>
                 </div>
                 <div className='col-10 d-flex justify-content-between flex-wrap mt-3 gap-2 '>
-                    <div className='col-4 d-flex flex-column justify-content-end gap-2' id={styles.card}>
+                    <div className='col-lg-4 col-md-5 d-flex flex-column justify-content-end gap-2' id={styles.card}>
                         <div className={styles.icondiv + " d-flex justify-content-center align-items-center mb-1"}><FaHandSparkles /></div>
                         <h3>{detailsServie.details_servic?.Subtitle1}</h3>
                         <span>{detailsServie.details_servic?.subparagraph1}</span>
                         <div>
                         </div>
                     </div>
-                    <div className='col-4 d-flex flex-column justify-content-end gap-2'>
+                    <div className='col-lg-4 col-md-5 d-flex flex-column justify-content-end gap-2'>
                         <div className={styles.icondiv + " d-flex justify-content-center align-items-center mb-1"}><FaStethoscope /></div>
                         <h3>{detailsServie.details_servic?.Subtitle2}</h3>
                         <span>{detailsServie.details_servic?.subparagraph2}</span>
                         <div>
                         </div>
                     </div>
-                    <div className='col-4 d-flex flex-column justify-content-end gap-2'>
+                    <div className='col-lg-4 col-md-5 d-flex flex-column justify-content-end gap-2'>
                         <div className={styles.icondiv + " d-flex justify-content-center align-items-center mb-1"}><LiaClinicMedicalSolid /></div>
                         <h3>{detailsServie.details_servic?.Subtitle3}</h3>
                         <span>{detailsServie.details_servic?.subparagraph3}</span>
                         <div>
                         </div>
                     </div>
-                    <div className='col-4 d-flex flex-column justify-content-end gap-2'>
+                    <div className='col-lg-4 col-md-5  d-flex flex-column justify-content-end gap-2'>
                         <div className={styles.icondiv + " d-flex justify-content-center align-items-center mb-1"}><BiTestTube /></div>
                         <h3>{detailsServie.details_servic?.Subtitle4}</h3>
                         <span>{detailsServie.details_servic?.subparagraph4}</span>
@@ -82,13 +82,13 @@ export default function DeatailsService() {
                     </div>
 
                 </div>
-                <div className='col-11 d-flex align-items-center justify-content-between  gap-4 mb-3'>
+                <div className='col-11 d-flex align-items-center justify-content-between  gap-4 mb-3'id={styles.ullayer}>
                     <div className={styles.imgbenefit}>
                         <img src={domain + detailsServie.details_servic?.img[0].url} alt="" />
 
                     </div>
-                    <div className='d-flex flex-column justify-content-between '>
-                        <h4>{detailsServie.details_servic?.benefits_title}</h4>
+                    <div className='d-flex flex-column justify-content-between gap-2 '>
+                        <h4 className='mt-2'>{detailsServie.details_servic?.benefits_title}</h4>
                         <div className='d-flex gap-2'>
                             <div className={styles.covermark + " d-flex justify-content-center align-items-center"}><IoCheckmarkOutline /></div>
                             <p>{detailsServie.details_servic?.li_1}</p>

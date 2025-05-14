@@ -8,6 +8,7 @@ import logo from '../../assets/header-logo2.png'
 import * as Yup from 'yup'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../Firebase';
+import Swal from 'sweetalert2';
 export default function FormikLogin() {
   const navigate = useNavigate()
   const validationSchema = Yup.object({
@@ -32,6 +33,12 @@ export default function FormikLogin() {
         sessionStorage.setItem("user_id:",user?.uid)
       }
       let role = sessionStorage.getItem("role") || sessionStorage.getItem("role")
+        Swal.fire({
+              title: 'Login Successful!',
+              text: 'You have successfully Login. Welcome!',
+              icon: 'success',
+              confirmButtonText: 'OK'
+            });
       navigate("/Dashboard")
     } catch (error) {
       console.error("Login error:", error.message);
@@ -46,7 +53,7 @@ export default function FormikLogin() {
                 <div className=' d-flex d-md-none' id={styles.logodiv}>
                   <img src={logo} alt="" />
                 </div>
-                <div className='col-lg-10 col-md-12 col-11  px-lg-3 pe-5  d-flex flex-column gap-lg-1'>
+                <div className='col-lg-10 col-md-12 col-12  px-lg-3 pe-5  d-flex flex-column gap-lg-1'>
                   <h3>Welcome to Laborc</h3>
                   <p className='m-0 ms-1 mt-1'>Need an account?<Link to={"/registerAdmin"} className='text-decoration-none '>Sign Up Admin</Link> </p>
                 </div>
@@ -67,7 +74,7 @@ export default function FormikLogin() {
                     <Field type="checkbox" name="userremember" />
                     Remember me
                   </label>
-                  <Link className='nav-link'>Forget Password?</Link>
+                  {/* <Link className='nav-link'>Forget Password?</Link> */}
                 </div>
 
 

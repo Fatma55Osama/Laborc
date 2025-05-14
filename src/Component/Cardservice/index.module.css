@@ -55,13 +55,16 @@
     height: 200px !important;
   } */
   #carddetail{
-    width: 380px;
+    width: 310px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
   #contentcard {
-    width: 350px !important;
-    height: 450px !important; 
+    width: 300px !important;
+    height: 470px !important; 
     img{
-      width:350px; 
+      width:280px; 
       height:230px;
     }
     h3{

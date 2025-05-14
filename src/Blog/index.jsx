@@ -49,11 +49,12 @@ export default function Blog() {
         <div className='container col-12 d-flex flex-wrap justify-content-center align-items-center justify-content-between '>
           {
             allbolog.map((el, index) => (
-              <div key={el.documentId} className={styles.divcard + ' d-flex  mb-5  '}>
+              <div key={el.documentId} className={styles.divcard + ' d-flex  mb-5  '}   data-aos="fade-up"
+              data-aos-offset="10" data-aos-delay={`${index * 350}`} >
                 <Card style={{ width: '26rem', borderRadius: "6px" }} className='shadow border-0'>
                   <Card.Img variant="top" height={245} style={{ padding: "10px", objectFit: "cover" }} className='rounded-4 position-relative  ' src={domain + el.img_card.url} />
                   <div className={styles.circledesign + " position-absolute d-flex flex-column justify-content-center align-items-center text-center text-white"}> <span>{el.day}</span>{el.month}</div>
-                  <Card.Body className='d-flex flex-column gap-2 mt-2 px-4 py-4'>
+                  <Card.Body className='d-flex flex-column gap-md-2 mt-2 px-4 py-4'>
                     <h5>{el.title1}</h5>
                     <Card.Title className={styles.title}><Link to={`/blogdetalis/${el.documentId}`} className='nav-link'>{el.title2}</Link></Card.Title>
                     <Card.Text className={styles.cardtext}>

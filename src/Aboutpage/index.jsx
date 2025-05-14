@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './index.module.css'
 import Header from '../Component/Header'
-import { useRecoilState } from 'recoil'
-import { $active } from '../Store'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { $active, $domain, useData } from '../Store'
 import { FaAngleLeft, FaAngleRight, FaCheck } from 'react-icons/fa6'
 import logo from '../assets/span1.svg'
 import logoBlack from '../assets/span4.svg'
@@ -35,6 +35,13 @@ import Ourworks from '../Component/Ourworks'
 export default function Aboutpage() {
   const [active, setActive] = useRecoilState($active)
   const [seviceLab, setSeviceLab] = useState([{ id: 1, img: serivce1, label: "Clinical Chemistry", text: "Analyze blood, urine, and other body fluids to assess organ function & detect conditions like diabetes kidney disease." }, { id: 2, img: serivce2, label: "Hematolog", text: "Examine blood samples to diagnose anemia, clotting disorders, and  blood cancers." }, { id: 3, img: serivce3, label: "Microbiology", text: "Study tissue samples to diagnose cancers and other diseases at the <br/> cellular level." }])
+  const { dataservice } = useData()
+  const domain = useRecoilValue($domain)
+  const [filterservice, setfilterservice] = useState([])
+  useEffect(() => {
+    let copyfilter = dataservice.filter((el) => { return el.onmainpage })
+    setfilterservice(copyfilter)
+  }, [dataservice])
   return (
     <div className={styles.alldivs + " col-12  d-flex flex-column "}>
       <div className={styles.divimg + " col-12 d-flex flex-column  "}>
@@ -54,11 +61,11 @@ export default function Aboutpage() {
               <img src={logo} width={25} alt="" />
               <span className='mt-2'>About Laborc</span>
             </div>
-            <h1 className=' col-lg-9 col-md-10 mt-lg-0 mt-md-3'>Pioneering Solutions at the Intersection Laborc </h1>
+            <h1 className=' col-lg-9 col-md-10 mt-lg-0 mt-md-3' data-aos="fade-up" data-aos-offset="13" data-aos-delay="450">Advancing Health Through Innovative Diagnostic Solutions </h1>
             <div className={styles.centersecondimg + ' d-flex flex-row justify-content-between'}>
               <div className={styles.imgandtext + ' col-5  d-flex flex-column mt-5 gap-2'}>
                 <img src={farme} width={361} alt="" />
-                <span className='text-center'>AGRICULTURE</span>
+                <span className='text-center'>AGRODIAGNOSTICS</span>
               </div>
               <div className={styles.part2 + '   position-relative d-flex flex-column text-center gap-3 '}>
                 <img src={imgzgzg} width={446} alt="" />
@@ -73,8 +80,9 @@ export default function Aboutpage() {
 
           <div className={styles.part3 + ' col-4  d-flex justify-content-end mt-5 '}>
             <div className='col-10 d-flex flex-column gap-5 align-items-start'>
-              <p className='m-0'>With a commitment to sustainability and innovation, Laborc stands at the forefront of agricultural and health research. We collaborate with farmers, agribusinesses, healthcare providers, and public institutions to deliver impactful research that addresses the challenges of today and tomorrow.</p>
-              <button className='py-3 px-3'>About Laborc</button>
+              <p className='m-0' data-aos="fade-up" data-aos-offset="13" data-aos-delay="450">
+                With a focus on accuracy and care, Laborc is dedicated to advancing medical diagnostics and public health. We work closely with patients, clinics, and researchers to provide reliable testing and insights that support healthier communities now and in the future.</p>
+              <Link className='nav-link' to={'/service'} data-aos="fade-up" data-aos-offset="13" data-aos-delay="400">  <button className='py-3 px-3'>About Laborc</button> </Link>
               <div className={styles.imgandtext + " d-flex flex-column text-center gap-3"}>
                 <img src={laborc} width={321} alt="" />
                 <span>HEALTH</span>
@@ -93,60 +101,60 @@ export default function Aboutpage() {
                 <img src={logoBlack} width={25} alt="" />
                 <span className='mt-2'>Our Service</span>
               </div>
-              <h1 className={'col-lg-9 col-md-11'}>Comprehensive Testing for Every Health Need</h1>
+              <h1 className={'col-lg-9 col-md-11'} data-aos="fade-right"data-aos-offset="10" data-aos-delay="450">Comprehensive Testing for Every Health Need</h1>
             </div>
-            <div className={styles.swiperbutton + '  d-flex align-items-center  justify-content-between gap-3 '}>
+            {/* <div className={styles.swiperbutton + '  d-flex align-items-center  justify-content-between gap-3 '}>
               <button className={styles["custom-prev"]}> <FaAngleLeft /></button>
               <button className={styles["custom-next"]}><FaAngleRight /></button>
-            </div>
+            </div> */}
 
           </div>
           <div className={styles.section2 + " mx-2 mt-5 pb-4"}>
             <>
               <Swiper
-               breakpoints={{
-                0: { // شاشات التليفون
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                768: { // شاشات التابلت
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                1024: { // الشاشات الكبيرة
-                  slidesPerView: 3,
-                  spaceBetween: 30,
-                }
-              }}
-                slidesPerView={3} // عدد العناصر الظاهرة
-                spaceBetween={30}  // المسافة بين العناصر
-                freeMode={true}    // تفعيل الحركة الحرة
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  }
+                }}
+                slidesPerView={3}
+                spaceBetween={30}
+                freeMode={true}
                 loop={true}
                 loopFillGroupWithBlank={true}
                 autoplay={{
-                  delay: 5000,  // تشغيل تلقائي كل 2 ثانية
-                  disableOnInteraction: false, // لا يتوقف عند تفاعل المستخدم
+                  delay: 5000,
+                  disableOnInteraction: false,
                 }}
                 navigation={{
                   nextEl: `.${styles["custom-next"]}`,
                   prevEl: `.${styles["custom-prev"]}`,
-                }}  // إضافة أسهم التحكم اليمين والشمال
-                grabCursor={true}  // تفعيل المؤشر اليدوي عند التحريك
-                touchEventsTarget="container" // تحسين التفاعل باللمس
+                }}
+                grabCursor={true}
+                touchEventsTarget="container"
                 modules={[FreeMode, Pagination, Autoplay, Navigation]}
                 className="mySwiper"
               >
                 {
-                  seviceLab.map((el, index) => {
+                  filterservice.map((el, index) => {
                     return (
-                      <SwiperSlide key={el.id} className='col-4 bg-white'>
+                      <SwiperSlide key={el.documentId} className='col-4 bg-white'>
                         <div className={styles.contentdivwhite + ' container col-11 py-4 gap-3 d-flex flex-column'}>
                           <div className={styles.icon + " d-flex align-items-center justify-content-center"}>
-                            <img src={el.img} width={25} alt="" />
+                            <img src={domain+el.icon.url} width={25} alt="" />
                           </div>
-                          <h4 className='m-0'>{el.label}</h4>
-                          <p className="m-0">{el.text}</p>
-                          <Link className={styles.Link + " nav-link"}>Read More <RiArrowRightUpLine /></Link>
+                          <h4 className='m-0'>{el.title}</h4>
+                          <p className="m-0">{el.paragraph}</p>
+                          <Link to={`/servicedetalis/${el.documentId}`} className={styles.Link + " nav-link"}>Read More <RiArrowRightUpLine /></Link>
 
                         </div>
                       </SwiperSlide>
@@ -185,60 +193,18 @@ export default function Aboutpage() {
                   <img src={logo} width={25} alt="" />
                   <span className='mt-2'>Our Mission & Vision</span>
                 </div>
-                <h1>Empowering Scientific Discovery Laborc Future.</h1>
-                <p>At Laborc, our mission is to empower the scientific community by delivering accurate, reliable, and timely results. We strive to enhance research capabilities, drive innovation, contribute to the betterment of society through our unwavering commitment to quality precision.</p>
-                <p> We envision a future where scientific advancements shape a better world. Our goal is to be at the forefront of this transformation, providing the tools, knowledge, and expertise necessary for groundbreaking discoveries.</p>
-               <button className='py-3 px-3'>About Laborc</button>
+                <h1  data-aos="fade-right"data-aos-offset="10" data-aos-delay="450">Empowering Scientific Discovery Laborc Future.</h1>
+                <p  data-aos="fade-right"data-aos-offset="10" data-aos-delay="450">At Laborc, our mission is to empower the scientific community by delivering accurate, reliable, and timely results. We strive to enhance research capabilities, drive innovation, contribute to the betterment of society through our unwavering commitment to quality precision.</p>
+                <p  data-aos="fade-right"data-aos-offset="10" data-aos-delay="450"> We envision a future where scientific advancements shape a better world. Our goal is to be at the forefront of this transformation, providing the tools, knowledge, and expertise necessary for groundbreaking discoveries.</p>
+                <Link className='nav-link' to={'/research'}  data-aos="fade-left"data-aos-offset="10" data-aos-delay="450">  <button className='py-3 px-3'>About Laborc</button> </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* <div className={styles.div5 + " d-flex align-items-center"}>
-        <div className='container col-10  d-flex'>
-          <div className='col-6 d-flex flex-column ms-2 gap-3'>
-            <div className='col-5 d-flex align-items-center gap-2'>
-              <img src={logo} alt="" />
-              <span className='mt-2'>Our Values</span>
-            </div>
-              <h1 className='col-11'>We work is conducted honest transparency.</h1>
-              <div className= ' col-11 d-flex flex-column align-items-start gap-2'>
-                <div className='d-flex gap-2'>
-                  <div className={styles.icons + " d-flex justify-content-center align-items-center"}><span><IoMdCheckmark /></span></div>
-                  <div className={styles.textall}>
-                    <h4>Excellence</h4>
-                    <p>We are committed to achieving the highest levels of quality in everything we do</p>
-                  </div>
-                </div>
-                <div className='d-flex gap-2'>
-                  <div className={styles.icons + " d-flex justify-content-center align-items-center"}><span><IoMdCheckmark /></span></div>
-                  <div className={styles.textall}>
-                    <h4>Innovation</h4>
-                    <p>We foster a culture of creativity and continuous improvement, embracing new ideas and technologies.</p>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-between gap-2'>
-                  <div className={styles.icons + " d-flex justify-content-center align-items-center"}><span><IoMdCheckmark /></span></div>
-                  <div className={styles.textall}>
-                    <h4>Collaboration</h4>
-                    <p>We believe that the best results come from working together, both within our teams and with our clients and partners.</p>
-                  </div>
-                </div>
-                <button className='py-3 px-3'>Book A Lab Visit</button>
-                </div>
-          </div>
-          <div className='col-6  d-flex flex-column justify-content-between'>
-            <div className='d-flex justify-content-between g-5'>
-              <img src={doctor1} width={300} alt="" />
-              <img src={doctor2} width={300} alt="" />
-            </div>
-            <img className='mt-4' src={doctor3} alt="" />
-          </div>
-        </div>
-      </div> */}
-      <Ourworks/>
-       <Video/>
+      <Ourworks />
+      <Video />
     </div>
   )
 }

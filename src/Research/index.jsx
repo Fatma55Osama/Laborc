@@ -15,32 +15,15 @@ import { getcategory } from '../Api/GetCategory'
 import SectionVideo2 from '../Component/SectionVideo2'
 
 export default function Research() {
-  // const [categoryreaserch, setCategoryreaserch] = useState([])
   const {research} = useResearch()
   const domain = useRecoilValue($domain)
-  // useEffect(() => {
-  //   axios.get(`${domain}/api/categories`, {
-  //     params: {
-  //       populate: "*"
-  //     }
-  //   }).then((res) => {
-  //     setCategoryreaserch(res.data.data)
-  //     console.log(res.data.data)
-  //   }).catch((err) => {
-  //     console.log(err)
-  //   })
-  // }, [])
-  // useEffect(()=>{
-  //   getcategory(domain).then((res)=>{
-  //     setCategoryreaserch(res)
-  //   })
-  // },[domain])
+
   return (
     <div className={styles.maindiv + " col-12"}>
       <div className={styles.section1 + " h-100 d-flex flex-column"}>
         <div className='container d-flex flex-column justify-content-center  h-100 flex-grow-1  gap-2  '>
           <h1>Our Research</h1>
-          <span className={styles.spanbream + ' d-flex flex-row align-items-center gap-1'}><Link to={"/"} className='nav-link'>Home</Link>  <FaAngleRight className='iconfaright' /> <Link to={"/research"} className='nav-link'> Our Research</Link></span>
+          <span className={styles.spanbream + ' d-flex flex-row flex-wrap align-items-center gap-1'}><Link to={"/"} className='nav-link'>Home</Link>  <FaAngleRight className='iconfaright' /> <Link to={"/research"} className='nav-link'> Our Research</Link></span>
         </div>
       </div>
 
@@ -53,7 +36,8 @@ export default function Research() {
                   console.log(el.imge_category); 
                   console.log(domain + el.imge_category?.url);
                 return (
-                  <Card key={el.documentId} className={styles.cardall}style={{ width: '26rem', borderRadius: '0',backgroundColor:" #F1F5FD" ,border:"none"}} >  {/* إزالة الـ border-radius */}
+                  <Card key={el.documentId} className={styles.cardall}style={{ width: '26rem', borderRadius: '0',backgroundColor:" #F1F5FD" ,border:"none"}} data-aos="fade-up"
+                  data-aos-offset="10" data-aos-delay={`${index * 340}`}  > 
                  
                     <Card.Img className={styles.cardimg } variant="top" src={domain+el.imge_category.url} />
                     <Card.Body>

@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '../../Firebase';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import Swal from 'sweetalert2';
 
 export default function Editbooking() {
   const params = useParams();
@@ -36,19 +37,33 @@ export default function Editbooking() {
       await updateDoc(bookingRef, {
         message: values.message
       });
-      alert("Message added successfully.");
-      getBookingDetails(params.taskId); // Refresh data
+      setBookingDetails(prevState => ({
+        ...prevState,
+        message: values.message
+      }));
+    Swal.fire({
+          icon: 'success',
+          title: 'Message added successfully.',
+        });
       resetForm();
     } catch (err) {
       console.error("Error updating document: ", err);
     }
   };
 
- 
+  useEffect(() => {
+    getBookingDetails(params.taskId);
+  }, [params.taskId]);
 
   return (
-    <div className='container'>
-          <p><strong>Name:</strong> {bookingDetails?.name}</p>
+    <div className=' col-12 h-100 d-flex justify-content-center align-items-center'>
+ <div className='col-lg-6 col-md-9 col-11 py-5  container shadow d-flex flex-column justify-content-center'>
+          <p><strong>Name:</strong>  {bookingDetails?.firstName} {bookingDetails?.lastName} </p>
+          <p><strong> Email: </strong>{bookingDetails?.email}</p>
+          <p><strong>Phone: </strong> {bookingDetails?.phone}</p>
+          <p> <strong>Booking Date:</strong>  {bookingDetails?.date}</p>
+          <p> <strong>Massage User:</strong>  {bookingDetails?.messages}</p>
+          <p> <strong>Addrese:</strong>  {bookingDetails?.Addrese}</p>
           <p><strong>Current Message:</strong> {bookingDetails?.message || "No message yet."}</p>
       <Formik
         initialValues={{ message: "" }}
@@ -69,5 +84,7 @@ export default function Editbooking() {
       </Formik>
       <button onClick={() => navigate(-1)} className='btn btn-secondary mt-3'>Back</button>
     </div>
+    </div>
+   
   );
 }

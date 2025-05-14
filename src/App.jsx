@@ -31,6 +31,7 @@ import Editbooking from './DashboardAdmin/Editbooking'
 import MainLayoutDash from './Component/MainLayoutDash'
 import Rebooking from './DashboardAdmin/Rebooking'
 import Profile from './DashboardAdmin/Profile'
+import AOS from 'aos';
 // registerLicense("Ngo9BigBOggjHTQxAR8/V1NMaF1cXmhLYVFzWmFZfVtgdV9CZ1ZRQGY/P1ZhSXxWdkdiUX5ddHNVQmNbWUc=");
 export default function App() {
   const domain = useRecoilValue($domain)
@@ -48,6 +49,16 @@ export default function App() {
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      offset: 100, 
+      once: false,
+    });
+    return () => {
+      AOS.refresh(); 
+  };
+  }, []);
   useEffect(() => {
     getteam(domain).then((res) => {
       setTeams(res)
@@ -74,13 +85,6 @@ export default function App() {
   }, [])
   
 
-  // useEffect(() => {
-  //   getblog(domain, currentpage, blogsperpage).then((res) => {
-  //     setDataBlog(res.allbolgs)
-  //     console.log(res)
-  //     setTotalPages(res.totalPages || 1)
-  //   }).catch((err) => { console.log(err) })
-  // }, [domain, currentpage])
 
   return (
 
@@ -110,8 +114,6 @@ export default function App() {
           <Route path='registerAdmin' element={<Register />}></Route>
           <Route path='loginuser' element={<Loginuser />}></Route>
           <Route path='registeruser' element={<Registeruser />}></Route>
-          {/* <Route path='/Dashboard' element={<Dashboard/>}/>
-                <Route path='/Dashboard/edit/:taskId' element={<Editbooking/>}/> */}
           <Route path='*' element={<Errorpage />}></Route>
         </Route>
 

@@ -10,7 +10,7 @@ export default function ShowPartBlogs({ showheader = true, wrapperClass = "", bl
     const { dataBlog } = useData();
     const { setblogsperpage, blogsperpage } = usepagination()
     useEffect(() => {
-        if (blogsperpage !== 4) {  // لا تغير القيمة إذا كانت نفس القيمة الحالية
+        if (blogsperpage !== 4) {  
             setblogsperpage(4);
         }
     }, [setblogsperpage, blogsperpage])
@@ -35,19 +35,20 @@ export default function ShowPartBlogs({ showheader = true, wrapperClass = "", bl
                     </div>)
                 }
 
-                <div id={styles.downdiv} className={`d-flex flex-wrap justify-content-between gap-4 ${downdiv}`}>
+                <div id={styles.downdiv} className={`d-flex flex-wrap justify-content-between gap-4 ${downdiv}`} >
                     {
-                        dataBlog && dataBlog.slice(0, blogsCount).map((el) => (
-                            <div key={el.documentId} className={`bg-white py-3 px-1  position-relative ${backcontennt}`} id={styles.backcontent} style={{ width: 630 }}>
+                        dataBlog && dataBlog.slice(0, blogsCount).map((el,index) => (
+                            <div key={el.documentId} className={`bg-white py-3 px-1  position-relative ${backcontennt}`} id={styles.backcontent} style={{ width: 630 }} data-aos="fade-up"
+                            data-aos-offset="10" data-aos-delay={`${index * 100000}`}>
                                 <div className='container d-flex justify-content-between align-items-center gap-4 ' id={styles.detailcontantblog}>
                                     <img src={domain + el.img_card.url} className='rounded-5' width={240} height={185} alt="" style={{ objectFit: "cover" }} />
-                                    <div className='d-flex flex-column gap-2 col-7 col-md-7 col-lg-7'>
+                                    <div className='d-flex flex-column gap-2 col-7 col-md-7 col-lg-7 mt-1 mt-md-0'>
                                         <p className='m-0'>{el.day} {el.month},2024 / <span> {el.title1}</span></p>
                                         <Link to={`/blogdetalis/${el.documentId}`} className='nav-link'> <h3>{el.title2}</h3></Link>
                                     </div>
                                 </div>
                                 {
-                                    logoicon && (<Link to={`/blogdetalis/${el.documentId}`} className='col-12 nav-link d-flex justify-content-end align-items-end '>
+                                    logoicon && (<Link to={`/blogdetalis/${el.documentId}`} className='col-12 nav-link d-flex justify-content-end align-items-end ' >
                                         <div className='  position-absolute ' id={styles.parentLogoLink}>
                                             <div className='d-flex justify-content-center align-items-center' id={styles.logolink}><GoArrowUpRight /></div>
                                         </div>

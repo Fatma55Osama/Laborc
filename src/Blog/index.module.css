@@ -69,6 +69,10 @@ h5{
     justify-content: center !important;
  }
   .divcard > div{
-    width: 24rem !important;
+    width: 22rem !important;
+  }
+  .divcard{
+    height: 500px;
+
   }
 }

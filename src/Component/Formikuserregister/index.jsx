@@ -30,7 +30,7 @@ export default function Formuserregister() {
 
   })
 
-  const Registeruser = async (values) => {
+  const Registeruser = async (values,actions) => {
     console.log(values)
     try {
 
@@ -61,7 +61,9 @@ export default function Formuserregister() {
         icon: 'success',
         confirmButtonText: 'OK'
       });
-      navigate("/contactus");
+      navigate("/loginuser");
+      actions.resetForm();
+   
 
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
@@ -88,7 +90,7 @@ export default function Formuserregister() {
             <div className=' d-flex d-md-none' id={styles.logodiv}>
               <img src={logo} alt="" />
             </div>
-            <div className=' col-md-10 px-md-3  pe-5 pe-md-0'>
+            <div className=' col-md-10 px-md-3  pe-lg-5  pe-md-0'>
               <h3>Sign Up</h3>
               <span>Enter details to create your account</span>
             </div>

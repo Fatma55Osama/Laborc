@@ -16,19 +16,19 @@ export default function Footer() {
     <div className='col-12 parer'>
 
       <div className={styles.div6 + ' col-12 h-100  d-flex justify-content-center'}>
-        <div className={ styles.parentparts +' container d-flex justify-content-between '}>
+        <div className={styles.parentparts + ' container d-flex justify-content-between '}>
           <div className={styles.part1 + ' col-12 col-lg-6 col-md-12 part1  d-flex align-items-center'}>
-            <h1>Ready to Innovate in Chemical & Metrical?</h1>
+            <h1>Take the first step towards precise diagnostics!</h1>
           </div>
           <div className={styles.part2 + ' col-lg-6  d-flex align-items-center justify-content-end'}>
-            <Link to={"/Contactus"} className={styles.btn1 + ' btn rounded-5 py-3 px-4 py-md-3 px-md-4 me-4' }>Contact Us Now<RiArrowRightUpLine className={styles["black-icon"]} /></Link>
+            <Link to={"/Contactus"} className={styles.btn1 + ' btn rounded-5 py-3 px-4 py-md-3 px-md-4 me-4'}>Contact Us Now<RiArrowRightUpLine className={styles["black-icon"]} /></Link>
             <Link to={"/team"} className={styles.btn2 + ' btn rounded-5 py-3 px-4 py-md-3 px-md-4'}> Lab Expert<RiArrowRightUpLine className={styles["white-icon"]} /></Link>
           </div>
         </div>
       </div>
 
       <div className={styles.div7 + ' col-12 d-flex justify-content-center '}>
-        <div className={ styles.allsections +' container  d-flex justify-content-between align-items-center  gap-lg-5'}>
+        <div className={styles.allsections + ' container  d-flex justify-content-between align-items-center  gap-lg-5'}>
           <div className={styles.section1 + ' col-lg-3 '}>
             <img src={logo} width={163} alt="" />
             <p className='mt-4 col-md-11 col-lg-11'>At Laborc, we are dedicated to providing advanced laboratory & research services meet the highest standards of quality and precision.</p>
@@ -51,20 +51,29 @@ export default function Footer() {
           <div className={styles.section2 + "    "}>
             <ul className='d-flex flex-column gap-3'>
               <h2>About Link</h2>
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Our Services</li>
-              <li>Contact US</li>
+
+
+
+
+
+              <li><Link className='nav-link' to="/">Home</Link></li>
+              <li> <Link className='nav-link' to="/about">About Us</Link></li>
+              <li><Link className='nav-link' to="/research">Research</Link></li>
+              <li><Link className='nav-link' to="/service">Services</Link></li>
+              <li> <Link to={'/faq'} className='nav-link'>FAQ's</Link></li>
+              <li> <Link to={'/team'} className='nav-link'>Team</Link></li>
+                <li> <Link className='nav-link' to={"/blog"}>Blog </Link></li>
+            <li><Link className='nav-link' to="/Contactus">Contact </Link></li>
             </ul>
           </div>
 
           <div className={styles.section3 + "   "}>
             <ul className='d-flex flex-column gap-4'>
               <h2>Get in touch</h2>
-              <li><MdOutlineMail className={styles.icon2+ " me-3"}/> Infolaborc@gmail.com</li>
-              <li className='col-md-7 col-lg-7 d-flex'><GrLocation  className={styles.icon3+ " me-3"}/><span className='text-start ms-2 '>123 Innovation Drive,
-                          Tech City, ST 12345, USA</span></li>
-              <li><MdOutlinePhone className={styles.icon2 + " me-3"}/>123-456-7890</li>
+              <li><MdOutlineMail className={styles.icon2 + " me-3"} /> Infolaborc@gmail.com</li>
+              <li className='col-md-7 col-lg-7 d-flex'><GrLocation className={styles.icon3 + " me-3"} /><span className='text-start ms-2 '>123 Innovation Drive,
+                Tech City, ST 12345, USA</span></li>
+              <li><MdOutlinePhone className={styles.icon2 + " me-3"} />123-456-7890</li>
             </ul>
           </div>
 

@@ -43,7 +43,8 @@ export default function FAQ() {
               questions.map((el,index)=>{
                 return(
                   
-                  <Accordion key={el.documentId} className='accordionfaq' >
+                  <Accordion key={el.documentId} className='accordionfaq'   data-aos="fade-right"
+                  data-aos-offset="10" data-aos-delay={`${index * 350}`} >
                   <Accordion.Item eventKey="0" className='accordion-itemfaq '>
                     <Accordion.Header className='accordion-buttonfaq'>{`${index+1}. ${el.Qustion}`}</Accordion.Header>
                     <Accordion.Body className={styles.answer}>
@@ -54,39 +55,14 @@ export default function FAQ() {
                 )
               })
             }
-            {/* <Accordion  defaultActiveKey="0">
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>Accordion Item #1</Accordion.Header>
-                <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum.
-                </Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey="1">
-                <Accordion.Header>Accordion Item #2</Accordion.Header>
-                <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum.
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion> */}
+
           </div>
         </div>
       </div>
       <div className="col-12">
          <SectionVideo2/>
       </div>
-      <div className={styles.send  + ' col-12  mb-5 h-100 d-flex'}>
+      {/* <div className={styles.send  + ' col-12  mb-5 h-100 d-flex'}>
          <div className='container  flex-grow-1 d-flex flex-column justify-content-center align-items-center gap-4'>
           <button className='py-1 px-3 d-flex align-items-center justify-content-center'>SEND MESSAGE</button>
           <h3>Ask Your Question</h3>
@@ -99,7 +75,7 @@ export default function FAQ() {
              <Link className={styles.Asksend + ' py-2 px-4 rounded-5 nav-link btn text-white'}>Ask Question</Link>
           </form>
          </div>
-      </div>
+      </div> */}
     </div>
   )
 }

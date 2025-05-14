@@ -49,7 +49,7 @@ export default function SectionVideo2() {
                         <div className={styles.texth4 + ' col-12   d-flex justify-content-center align-items-center  '}><h4 className='text-center col-md-6 col-10 text-center '>
                             Our lab drives innovation in energy and technology for a sustainable future</h4>
                         </div>
-                        <div className={styles.allhexagon + ' col-12  d-flex justify-content-center align-items-center '}>
+                        <div className={styles.allhexagon + ' col-md-12 col-10  d-flex justify-content-center align-items-center '}>
                             <div className={styles.parenthexagon + ' container  d-flex justify-content-between align-items-baseline '}>
                                 <div className='col-3 d-flex flex-column  justify-content-center align-items-center text-center gap-3'>
                                     <div className={styles.hexagon + " d-flex justify-content-center align-items-center"} style={{ background: "#37aa67", color: "white", fontSize: "32px" }}><TbUserPlus className={styles.bookban} /></div>

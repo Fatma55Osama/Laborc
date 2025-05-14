@@ -37,7 +37,7 @@ export default function DetailsResearch() {
         <div className={styles.imgdiv + "  d-flex flex-column"} style={{
           backgroundImage: `url(${research.cover ? domain + research.cover.url : ''})`
         }}>
-          <div className='container text-white d-flex flex-column justify-content-center  h-100 flex-grow-1  gap-2  '>
+          <div className='container col-12 text-white d-flex flex-column justify-content-center  h-100 flex-grow-1  gap-2  '>
             <h1>Our Research</h1>
             <span className={styles.spanbream + ' d-flex flex-row align-items-center gap-1'}><Link to={"/"} className='nav-link'>Home</Link>  <FaAngleRight className='iconfaright' /> <Link to={"/research"} className='nav-link'> Our Research</Link>  <FaAngleRight />
              <Link className='nav-link'> {research.title_1}</Link></span>

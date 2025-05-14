@@ -35,8 +35,8 @@ export default function Servicepage() {
       <div className='col-12 d-flex  '>
         <div className=' h-100  col-12 mb-5  d-flex flex-wrap justify-content-center gap-4'>
           {
-            dataservice && dataservice.map((el)=>(
-              <Cardservice key={el.documentId} documentId={el.documentId} title={el.title} header={el.header} paragraph={el.paragraph} img={domain+el.img_card.url }     />
+            dataservice && dataservice.map((el,index)=>(
+              <Cardservice key={el.documentId} index={index} documentId={el.documentId} title={el.title} header={el.header} paragraph={el.paragraph} img={domain+el.img_card.url }  />
 
             ))
 

@@ -27,7 +27,8 @@ export default function Team() {
             {
               teamperson.map((el, index) => {
                 return (
-                  <Card className={styles.cardall} key={el.documentId} style={{ width: '19rem', border: "none", borderRadius: '0' }}>
+                  <Card className={styles.cardall} key={el.documentId} style={{ width: '19rem', border: "none", borderRadius: '0' }}   data-aos="fade-up"
+                  data-aos-offset="8" data-aos-delay={`${index * 300}`} >
                     <div className={styles.divimg + ' col-12 '}>
                       <Card.Img variant="top" className={styles.imgcard} src={domain + el.img_doctor.url} />
 

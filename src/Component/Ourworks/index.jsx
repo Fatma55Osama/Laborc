@@ -5,6 +5,7 @@ import doctor1 from '../../assets/values-img1.png'
 import doctor2 from '../../assets/values-img2.png'
 import doctor3 from '../../assets/values-img3.png'
 import { IoMdCheckmark } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
 export default function Ourworks() {
     return (
@@ -15,30 +16,32 @@ export default function Ourworks() {
                         <img src={logo} alt="" />
                         <span className='mt-2'>Our Values</span>
                     </div>
-                    <h1 className='col-11'>We work is conducted honest transparency.</h1>
+                    <h1 className='col-11'  data-aos="fade-right"data-aos-offset="10" data-aos-delay="450">We work is conducted honest transparency.</h1>
                     <div className=' col-11 d-flex flex-column align-items-start gap-2'>
-                        <div className='d-flex gap-2'>
+                        <div className='d-flex gap-2' data-aos="fade-right"data-aos-offset="10" data-aos-delay="450">
                             <div className={styles.icons + " d-flex justify-content-center align-items-center"}><span><IoMdCheckmark /></span></div>
-                            <div className={styles.textall}>
+                            <div className={styles.textall} >
                                 <h4>Excellence</h4>
                                 <p>We are committed to achieving the highest levels of quality in everything we do</p>
                             </div>
                         </div>
-                        <div className='d-flex gap-2'>
+                        <div className='d-flex gap-2'  data-aos="fade-right"data-aos-offset="10" data-aos-delay="450">
                             <div className={styles.icons + " d-flex justify-content-center align-items-center"}><span><IoMdCheckmark /></span></div>
                             <div className={styles.textall}>
                                 <h4>Innovation</h4>
                                 <p>We foster a culture of creativity and continuous improvement, embracing new ideas and technologies.</p>
                             </div>
                         </div>
-                        <div className='d-flex justify-content-between gap-2'>
+                        <div className='d-flex justify-content-between gap-2'  data-aos="fade-right"data-aos-offset="10" data-aos-delay="450">
                             <div className={styles.icons + " d-flex justify-content-center align-items-center"}><span><IoMdCheckmark /></span></div>
                             <div className={styles.textall}>
                                 <h4>Collaboration</h4>
                                 <p>We believe that the best results come from working together, both within our teams and with our clients and partners.</p>
                             </div>
                         </div>
-                        <button className='py-3 px-3'>Book A Lab Visit</button>
+                       <Link className='nav-link' to={'/contactus'}  data-aos="fade-right"data-aos-offset="10" data-aos-delay="450" >
+                       <button className='py-3 px-3'>Book A Lab Visit</button>
+                       </Link> 
                     </div>
                 </div>
                 <div className={styles.halftwo +   ' col-6  d-flex flex-column justify-content-between'}>
